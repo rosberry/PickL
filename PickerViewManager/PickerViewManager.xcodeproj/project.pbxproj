@@ -12,6 +12,13 @@
 		846085D71F56BB8A00503E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846085D51F56BB8A00503E95 /* Main.storyboard */; };
 		846085D91F56BB8A00503E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846085D81F56BB8A00503E95 /* Assets.xcassets */; };
 		846085DC1F56BB8A00503E95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846085DA1F56BB8A00503E95 /* LaunchScreen.storyboard */; };
+		846085EF1F56BBDF00503E95 /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E51F56BBDF00503E95 /* ClosureWrapper.swift */; };
+		846085F01F56BBDF00503E95 /* ComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E71F56BBDF00503E95 /* ComponentItem.swift */; };
+		846085F11F56BBDF00503E95 /* Foundation+RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E91F56BBDF00503E95 /* Foundation+RowItemProtocol.swift */; };
+		846085F21F56BBDF00503E95 /* UIView+RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EA1F56BBDF00503E95 /* UIView+RowItemProtocol.swift */; };
+		846085F31F56BBDF00503E95 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EB1F56BBDF00503E95 /* PickerViewManager.swift */; };
+		846085F41F56BBDF00503E95 /* RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085ED1F56BBDF00503E95 /* RowItemProtocol.swift */; };
+		846085F51F56BBDF00503E95 /* RowStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EE1F56BBDF00503E95 /* RowStringItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		846085D81F56BB8A00503E95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846085DB1F56BB8A00503E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		846085DD1F56BB8A00503E95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846085E51F56BBDF00503E95 /* ClosureWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureWrapper.swift; sourceTree = "<group>"; };
+		846085E71F56BBDF00503E95 /* ComponentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentItem.swift; sourceTree = "<group>"; };
+		846085E91F56BBDF00503E95 /* Foundation+RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+RowItemProtocol.swift"; sourceTree = "<group>"; };
+		846085EA1F56BBDF00503E95 /* UIView+RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RowItemProtocol.swift"; sourceTree = "<group>"; };
+		846085EB1F56BBDF00503E95 /* PickerViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
+		846085ED1F56BBDF00503E95 /* RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowItemProtocol.swift; sourceTree = "<group>"; };
+		846085EE1F56BBDF00503E95 /* RowStringItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowStringItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 		846085D01F56BB8A00503E95 /* PickerViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				846085E31F56BBDF00503E95 /* PickerViewManager */,
 				846085D11F56BB8A00503E95 /* AppDelegate.swift */,
 				846085D31F56BB8A00503E95 /* ViewController.swift */,
 				846085D51F56BB8A00503E95 /* Main.storyboard */,
@@ -62,6 +77,52 @@
 				846085DD1F56BB8A00503E95 /* Info.plist */,
 			);
 			path = PickerViewManager;
+			sourceTree = "<group>";
+		};
+		846085E31F56BBDF00503E95 /* PickerViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				846085E41F56BBDF00503E95 /* Additions */,
+				846085E61F56BBDF00503E95 /* Component */,
+				846085E81F56BBDF00503E95 /* Extensions */,
+				846085EC1F56BBDF00503E95 /* Row */,
+				846085EB1F56BBDF00503E95 /* PickerViewManager.swift */,
+			);
+			path = PickerViewManager;
+			sourceTree = "<group>";
+		};
+		846085E41F56BBDF00503E95 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				846085E51F56BBDF00503E95 /* ClosureWrapper.swift */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		846085E61F56BBDF00503E95 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				846085E71F56BBDF00503E95 /* ComponentItem.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		846085E81F56BBDF00503E95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				846085E91F56BBDF00503E95 /* Foundation+RowItemProtocol.swift */,
+				846085EA1F56BBDF00503E95 /* UIView+RowItemProtocol.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		846085EC1F56BBDF00503E95 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				846085ED1F56BBDF00503E95 /* RowItemProtocol.swift */,
+				846085EE1F56BBDF00503E95 /* RowStringItem.swift */,
+			);
+			path = Row;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846085F01F56BBDF00503E95 /* ComponentItem.swift in Sources */,
+				846085F41F56BBDF00503E95 /* RowItemProtocol.swift in Sources */,
+				846085F31F56BBDF00503E95 /* PickerViewManager.swift in Sources */,
 				846085D41F56BB8A00503E95 /* ViewController.swift in Sources */,
+				846085F11F56BBDF00503E95 /* Foundation+RowItemProtocol.swift in Sources */,
+				846085EF1F56BBDF00503E95 /* ClosureWrapper.swift in Sources */,
+				846085F21F56BBDF00503E95 /* UIView+RowItemProtocol.swift in Sources */,
 				846085D21F56BB8A00503E95 /* AppDelegate.swift in Sources */,
+				846085F51F56BBDF00503E95 /* RowStringItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
