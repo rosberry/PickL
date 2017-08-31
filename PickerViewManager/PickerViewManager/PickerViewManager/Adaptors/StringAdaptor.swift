@@ -10,9 +10,11 @@ import UIKit
 
 public final class StringAdaptor: NSObject, Adaptor {
     
-    public typealias RowItemType = RowStringItem    
+    public typealias RowItemType = RowStringItemProtocol    
     public var components: [ComponentItem<StringAdaptor>] = []
 }
+
+// MARK: - UIPickerViewDelegate
 
 public extension StringAdaptor {
     

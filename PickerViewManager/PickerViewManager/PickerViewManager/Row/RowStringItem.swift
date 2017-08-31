@@ -1,26 +1,26 @@
 //
 //  RowStringItem.swift
-//  Obolus
+//  PickerViewManager
 //
-//  Created by Nikita Ermolenko on 17/08/2017.
+//  Created by Nikita Ermolenko on 31/08/2017.
 //  Copyright © 2017 Rosberry. All rights reserved.
 //
 
 import UIKit
 
-public protocol RowStringItem: RowItem {
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString?
+public class RowStringItem {
+    
+    var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
 }
 
-public extension RowStringItem {
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return nil
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return nil
+// MARK: - RowStringItemProtocol
+
+extension RowStringItem: RowStringItemProtocol {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return title
     }
 }

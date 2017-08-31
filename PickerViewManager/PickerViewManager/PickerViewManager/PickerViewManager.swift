@@ -8,10 +8,12 @@
 
 import UIKit
 
-fileprivate class PickerViewManagerDataSource: NSObject, UIPickerViewDataSource {
+fileprivate final class PickerViewManagerDataSource: NSObject, UIPickerViewDataSource {
 
-    let numberOfComponentsHandler: (UIPickerView) -> Int
-    let numberOfRowsInComponentHandler: (UIPickerView, Int) -> Int
+    private typealias Component = Int
+    
+    private let numberOfComponentsHandler: (UIPickerView) -> Int
+    private let numberOfRowsInComponentHandler: (UIPickerView, Component) -> Int
 
     init(numberOfComponentsHandler: @escaping (UIPickerView) -> Int, numberOfRowsInComponentHandler: @escaping (UIPickerView, Int) -> Int) {
         self.numberOfComponentsHandler = numberOfComponentsHandler
@@ -42,6 +44,7 @@ open class PickerViewManager<AdaptorType> where AdaptorType: Adaptor {
     
     var components: [ComponentItem<AdaptorType>] = [] {
         didSet {
+            adaptor.components = components
             for component in components {
                 component.pickerViewManager = self
                 component.pickerView = pickerView

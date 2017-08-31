@@ -1,5 +1,5 @@
 //
-//  UIView+RowItem.swift
+//  UIView+RowItemProtocol.swift
 //  Obolus
 //
 //  Created by Nikita Ermolenko on 16/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView: RowViewItem {
+extension UIView: RowViewItemProtocol {
     
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         return self

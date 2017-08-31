@@ -8,6 +8,9 @@
 
 import UIKit
 
+typealias StringRowItem = StringAdaptor
+typealias ViewRowItem = ViewAdaptor
+
 open class ComponentItem<AdaptorType> where AdaptorType: Adaptor {
 
     public typealias RowType = AdaptorType.RowItemType
@@ -117,6 +120,6 @@ public extension ComponentItem {
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 100
+        return pickerView.bounds.height
     }
 }

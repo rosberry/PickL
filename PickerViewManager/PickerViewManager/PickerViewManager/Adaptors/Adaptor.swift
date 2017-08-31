@@ -30,8 +30,8 @@ public extension Adaptor {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let componentItem = components[component]
-        if let rowItem = componentItem[row] as? RowItem {
-            rowItem.pickerView(pickerView, didSelectRow: row, inComponent: component)
+        if let RowItemProtocol = componentItem[row] as? RowItemProtocol {
+            RowItemProtocol.pickerView(pickerView, didSelectRow: row, inComponent: component)
         }
     }
 }
