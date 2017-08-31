@@ -21,11 +21,11 @@ fileprivate final class PickerViewManagerDataSource: NSObject, UIPickerViewDataS
     }
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return self.numberOfComponentsHandler(pickerView)
+        return numberOfComponentsHandler(pickerView)
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.numberOfRowsInComponentHandler(pickerView, component)
+        return numberOfRowsInComponentHandler(pickerView, component)
     }
 }
 
@@ -58,6 +58,6 @@ open class PickerViewManager<AdaptorType> where AdaptorType: Adaptor {
         self.adaptor = AdaptorType()
 
         pickerView.dataSource = dataSource
-        pickerView.delegate = self.adaptor
+        pickerView.delegate = adaptor
     }
 }
