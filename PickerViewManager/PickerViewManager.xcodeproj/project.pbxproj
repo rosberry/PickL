@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84012F661F57C6ED00206C45 /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84012F641F57C2FA00206C45 /* ViewAdaptor.swift */; };
+		841546591F57D2EC00D4D4D5 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841546581F57D2EC00D4D4D5 /* RowItem.swift */; };
+		8415465B1F57D32A00D4D4D5 /* RowViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415465A1F57D32A00D4D4D5 /* RowViewItem.swift */; };
+		8442164B1F57AFF900F8E3EF /* Adaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442164A1F57AFF900F8E3EF /* Adaptor.swift */; };
+		8442164D1F57B0B600F8E3EF /* StringAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442164C1F57B0B600F8E3EF /* StringAdaptor.swift */; };
 		846085D21F56BB8A00503E95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085D11F56BB8A00503E95 /* AppDelegate.swift */; };
 		846085D41F56BB8A00503E95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085D31F56BB8A00503E95 /* ViewController.swift */; };
 		846085D71F56BB8A00503E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846085D51F56BB8A00503E95 /* Main.storyboard */; };
@@ -14,14 +19,18 @@
 		846085DC1F56BB8A00503E95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846085DA1F56BB8A00503E95 /* LaunchScreen.storyboard */; };
 		846085EF1F56BBDF00503E95 /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E51F56BBDF00503E95 /* ClosureWrapper.swift */; };
 		846085F01F56BBDF00503E95 /* ComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E71F56BBDF00503E95 /* ComponentItem.swift */; };
-		846085F11F56BBDF00503E95 /* Foundation+RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E91F56BBDF00503E95 /* Foundation+RowItemProtocol.swift */; };
-		846085F21F56BBDF00503E95 /* UIView+RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EA1F56BBDF00503E95 /* UIView+RowItemProtocol.swift */; };
+		846085F11F56BBDF00503E95 /* Foundation+RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085E91F56BBDF00503E95 /* Foundation+RowItem.swift */; };
+		846085F21F56BBDF00503E95 /* UIView+RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EA1F56BBDF00503E95 /* UIView+RowItem.swift */; };
 		846085F31F56BBDF00503E95 /* PickerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EB1F56BBDF00503E95 /* PickerViewManager.swift */; };
-		846085F41F56BBDF00503E95 /* RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085ED1F56BBDF00503E95 /* RowItemProtocol.swift */; };
 		846085F51F56BBDF00503E95 /* RowStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846085EE1F56BBDF00503E95 /* RowStringItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84012F641F57C2FA00206C45 /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdaptor.swift; sourceTree = "<group>"; };
+		841546581F57D2EC00D4D4D5 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
+		8415465A1F57D32A00D4D4D5 /* RowViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewItem.swift; sourceTree = "<group>"; };
+		8442164A1F57AFF900F8E3EF /* Adaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptor.swift; sourceTree = "<group>"; };
+		8442164C1F57B0B600F8E3EF /* StringAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAdaptor.swift; sourceTree = "<group>"; };
 		846085CE1F56BB8A00503E95 /* PickerViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickerViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846085D11F56BB8A00503E95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846085D31F56BB8A00503E95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,10 +40,9 @@
 		846085DD1F56BB8A00503E95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846085E51F56BBDF00503E95 /* ClosureWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureWrapper.swift; sourceTree = "<group>"; };
 		846085E71F56BBDF00503E95 /* ComponentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentItem.swift; sourceTree = "<group>"; };
-		846085E91F56BBDF00503E95 /* Foundation+RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+RowItemProtocol.swift"; sourceTree = "<group>"; };
-		846085EA1F56BBDF00503E95 /* UIView+RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RowItemProtocol.swift"; sourceTree = "<group>"; };
+		846085E91F56BBDF00503E95 /* Foundation+RowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+RowItem.swift"; sourceTree = "<group>"; };
+		846085EA1F56BBDF00503E95 /* UIView+RowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RowItem.swift"; sourceTree = "<group>"; };
 		846085EB1F56BBDF00503E95 /* PickerViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewManager.swift; sourceTree = "<group>"; };
-		846085ED1F56BBDF00503E95 /* RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowItemProtocol.swift; sourceTree = "<group>"; };
 		846085EE1F56BBDF00503E95 /* RowStringItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowStringItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		844216491F57AFEC00F8E3EF /* Adaptors */ = {
+			isa = PBXGroup;
+			children = (
+				8442164A1F57AFF900F8E3EF /* Adaptor.swift */,
+				8442164C1F57B0B600F8E3EF /* StringAdaptor.swift */,
+				84012F641F57C2FA00206C45 /* ViewAdaptor.swift */,
+			);
+			path = Adaptors;
+			sourceTree = "<group>";
+		};
 		846085C51F56BB8A00503E95 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +100,7 @@
 		846085E31F56BBDF00503E95 /* PickerViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				844216491F57AFEC00F8E3EF /* Adaptors */,
 				846085E41F56BBDF00503E95 /* Additions */,
 				846085E61F56BBDF00503E95 /* Component */,
 				846085E81F56BBDF00503E95 /* Extensions */,
@@ -110,8 +129,8 @@
 		846085E81F56BBDF00503E95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				846085E91F56BBDF00503E95 /* Foundation+RowItemProtocol.swift */,
-				846085EA1F56BBDF00503E95 /* UIView+RowItemProtocol.swift */,
+				846085E91F56BBDF00503E95 /* Foundation+RowItem.swift */,
+				846085EA1F56BBDF00503E95 /* UIView+RowItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,8 +138,9 @@
 		846085EC1F56BBDF00503E95 /* Row */ = {
 			isa = PBXGroup;
 			children = (
-				846085ED1F56BBDF00503E95 /* RowItemProtocol.swift */,
+				841546581F57D2EC00D4D4D5 /* RowItem.swift */,
 				846085EE1F56BBDF00503E95 /* RowStringItem.swift */,
+				8415465A1F57D32A00D4D4D5 /* RowViewItem.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -152,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Rosberry;
 				TargetAttributes = {
 					846085CD1F56BB8A00503E95 = {
@@ -199,12 +219,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				846085F01F56BBDF00503E95 /* ComponentItem.swift in Sources */,
-				846085F41F56BBDF00503E95 /* RowItemProtocol.swift in Sources */,
 				846085F31F56BBDF00503E95 /* PickerViewManager.swift in Sources */,
 				846085D41F56BB8A00503E95 /* ViewController.swift in Sources */,
-				846085F11F56BBDF00503E95 /* Foundation+RowItemProtocol.swift in Sources */,
+				846085F11F56BBDF00503E95 /* Foundation+RowItem.swift in Sources */,
+				841546591F57D2EC00D4D4D5 /* RowItem.swift in Sources */,
 				846085EF1F56BBDF00503E95 /* ClosureWrapper.swift in Sources */,
-				846085F21F56BBDF00503E95 /* UIView+RowItemProtocol.swift in Sources */,
+				84012F661F57C6ED00206C45 /* ViewAdaptor.swift in Sources */,
+				846085F21F56BBDF00503E95 /* UIView+RowItem.swift in Sources */,
+				8415465B1F57D32A00D4D4D5 /* RowViewItem.swift in Sources */,
+				8442164D1F57B0B600F8E3EF /* StringAdaptor.swift in Sources */,
+				8442164B1F57AFF900F8E3EF /* Adaptor.swift in Sources */,
 				846085D21F56BB8A00503E95 /* AppDelegate.swift in Sources */,
 				846085F51F56BBDF00503E95 /* RowStringItem.swift in Sources */,
 			);
@@ -242,7 +266,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -250,7 +276,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -279,6 +309,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -292,7 +323,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -300,7 +333,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -321,6 +358,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -370,6 +408,7 @@
 				846085E21F56BB8A00503E95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

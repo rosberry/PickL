@@ -8,11 +8,39 @@
 
 import UIKit
 
-open class PickerViewManager: NSObject {
+fileprivate class PickerViewManagerDataSource: NSObject, UIPickerViewDataSource {
+
+    let numberOfComponentsHandler: (UIPickerView) -> Int
+    let numberOfRowsInComponentHandler: (UIPickerView, Int) -> Int
+
+    init(numberOfComponentsHandler: @escaping (UIPickerView) -> Int, numberOfRowsInComponentHandler: @escaping (UIPickerView, Int) -> Int) {
+        self.numberOfComponentsHandler = numberOfComponentsHandler
+        self.numberOfRowsInComponentHandler = numberOfRowsInComponentHandler
+    }
+
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return self.numberOfComponentsHandler(pickerView)
+    }
     
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.numberOfRowsInComponentHandler(pickerView, component)
+    }
+}
+
+open class PickerViewManager<AdaptorType> where AdaptorType: Adaptor {
+
     unowned let pickerView: UIPickerView
+    private let adaptor: AdaptorType
     
-    var components: [ComponentItem] = [] {
+    private lazy var dataSource: PickerViewManagerDataSource = {
+        return PickerViewManagerDataSource(numberOfComponentsHandler: { [unowned self] _ in
+            return self.components.count
+        }, numberOfRowsInComponentHandler: { [unowned self] _, component in
+            return self.components[component].rowItems.count
+        })
+    }()
+    
+    var components: [ComponentItem<AdaptorType>] = [] {
         didSet {
             for component in components {
                 component.pickerViewManager = self
@@ -24,44 +52,9 @@ open class PickerViewManager: NSObject {
     
     init(pickerView: UIPickerView) {
         self.pickerView = pickerView
-        
-        super.init()
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
-    }
-}
+        self.adaptor = AdaptorType()
 
-// MARK: - UIPickerViewDataSource
-
-extension PickerViewManager: UIPickerViewDataSource {
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return components.count
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return components[component].rowItems.count
-    }
-}
-
-// MARK: - UIPickerViewDelegate
-
-extension PickerViewManager: UIPickerViewDelegate {
-    
-    public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return components[component].pickerView(pickerView, widthForComponent: component)
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return components[component][row].pickerView(pickerView, titleForRow: row, forComponent: component)
-    }
-
-    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return components[component][row].pickerView(pickerView, attributedTitleForRow: row, forComponent: component)
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        return components[component][row].pickerView(pickerView, didSelectRow: row, inComponent: component)
+        pickerView.dataSource = dataSource
+        pickerView.delegate = self.adaptor
     }
 }

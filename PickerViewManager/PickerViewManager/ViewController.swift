@@ -10,16 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let pickerView = UIPickerView()
+    
+    lazy var pickerViewManager: PickerViewManager<StringAdaptor> = {
+        return PickerViewManager<StringAdaptor>(pickerView: self.pickerView)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.addSubview(pickerView)
+        
+//        pickerViewManager.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        pickerView.frame = CGRect(x: 50, y: 50, width: 300, height: 300)
     }
-
 
 }
 

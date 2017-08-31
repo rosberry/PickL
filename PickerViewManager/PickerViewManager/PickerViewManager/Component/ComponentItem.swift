@@ -8,15 +8,46 @@
 
 import UIKit
 
-open class ComponentItem {
+open class ComponentItem<AdaptorType> where AdaptorType: Adaptor {
 
+    public typealias RowType = AdaptorType.RowItemType
+    
     public var width: CGFloat?
-    public var rowItems: [RowItemProtocol]
+    public var rowItems: [RowType]
 
-    public weak var pickerViewManager: PickerViewManager?
+    public weak var pickerViewManager: PickerViewManager<AdaptorType>?
     public weak var pickerView: UIPickerView?
     
-    public var selectedRowItem: RowItemProtocol? {
+    public var index: Int? {
+        let index = pickerViewManager?.components.index(where: { item in
+            item === self
+        })
+        return index
+    }
+    
+    public init(rowItems: [RowType]) {
+        self.rowItems = rowItems
+    }
+    
+    open func reload() {
+        if let index = index {
+            pickerView?.reloadComponent(index)
+        }
+    }
+    
+    open subscript(index: Int) -> RowType {
+        assert(index >= 0, "Index can not be negative.")
+        assert(index < rowItems.count, "Index(\(index) outside of row items count(\(rowItems.count)).")
+        
+        return rowItems[index]
+    }
+}
+
+// MARK: - Selection
+
+extension ComponentItem {
+    
+    public var selectedRowItem: RowType? {
         guard let selectedRowIndex = selectedRowIndex else {
             return nil
         }
@@ -28,17 +59,6 @@ open class ComponentItem {
             return nil
         }
         return pickerView?.selectedRow(inComponent: index)
-    }
-    
-    public var index: Int? {
-        let index = pickerViewManager?.components.index(where: { item in
-            item === self
-        })
-        return index
-    }
-    
-    public init(rowItems: [RowItemProtocol]) {
-        self.rowItems = rowItems
     }
     
     open func selectRow(_ row: Int, animated: Bool) {
@@ -62,19 +82,16 @@ open class ComponentItem {
         }
     }
     
-    open func reload() {
-        if let index = index {
-            pickerView?.reloadComponent(index)
-        }
+    open func selectFirstRow(animated: Bool) {
+        selectRow(0, animated: animated)
     }
     
-    open subscript(index: Int) -> RowItemProtocol {
-        assert(index >= 0, "Index can not be negative.")
-        assert(index < rowItems.count, "Index(\(index) outside of row items count(\(rowItems.count)).")
-        
-        return rowItems[index]
+    open func selectLastRow(animated: Bool) {
+        selectRow(rowItems.count - 1, animated: animated)
     }
 }
+
+// MARK: - PickerViewManagerDelegate
 
 public extension ComponentItem {
     
@@ -97,5 +114,9 @@ public extension ComponentItem {
             }
         }
         return (pickerView.bounds.width - widthSum) / CGFloat(pickerViewManager.components.count - numberOfComponentsWithWidth)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
     }
 }

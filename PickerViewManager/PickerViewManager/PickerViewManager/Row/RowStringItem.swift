@@ -8,15 +8,19 @@
 
 import UIKit
 
-class RowStringItem: RowItemProtocol {
-    
-    var title: String
+public protocol RowStringItem: RowItem {
 
-    init(title: String) {
-        self.title = title
-    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString?
+}
+
+public extension RowStringItem {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return title
+        return nil
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return nil
     }
 }
