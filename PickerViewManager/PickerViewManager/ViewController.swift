@@ -26,26 +26,39 @@ class ViewController: UIViewController {
 
         let rowItems1 = RowStringItem(title: "1")
         let rowItems2 = RowStringItem(title: "2")
-//
-//        let rowItems1 = UIView()
-//        rowItems1.backgroundColor = .yellow
-//
-//        let rowItems2 = UIView()
-//        rowItems2.backgroundColor = .green
+
+        let rowItems3 = RowStringItem(title: "1")
+        let rowItems4 = RowStringItem(title: "2")
+        
+        let rowItems5 = RowStringItem(title: "1")
+        let rowItems6 = RowStringItem(title: "2")
         
         let component1 = ComponentItem<A>(rowItems: [rowItems1, rowItems2])
         component1.didSelectRowItem = { _, index, rowItem in
             print("\(index)")
         }
         
-        let component2 = ComponentItem<A>(rowItems: [rowItems1, rowItems2])
+        let component2 = ComponentItem<A>(rowItems: [rowItems3, rowItems4])
         component2.didSelectRowItem = { _, index, rowItem in
             print("\(index)")
         }
         
-        let component3 = ComponentItem<A>(rowItems: [rowItems1, rowItems2])
+        let component3 = ComponentItem<A>(rowItems: [rowItems5, rowItems6])
 
         pickerViewManager.components = [component1, component2, component3]
+        
+//
+//        pickerViewManager.selectedRowsHandler { row in
+//
+//        }
+//
+//        pickerViewManager.selectedRowsHandler { row1, row2 in
+//
+//        }
+//
+        pickerViewManager.selectedRowsHandler { row1, row2, row3 in
+            print("\(row1), \(row2), \(row3)")
+        }
     }
     
     override func viewDidLayoutSubviews() {

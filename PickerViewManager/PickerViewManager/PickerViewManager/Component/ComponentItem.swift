@@ -23,7 +23,11 @@ open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     public weak var pickerViewManager: PickerViewManager<A>?
     public weak var pickerView: UIPickerView?
     
-    public var didSelectRowItem: RowSelectionHandler?
+    public var didSelectRowItem: RowSelectionHandler? {
+        didSet {
+            print("set \(didSelectRowItem)")
+        }
+    }
     
     public var index: Int? {
         let index = pickerViewManager?.components.index(where: { item in

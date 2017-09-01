@@ -17,16 +17,35 @@ public protocol PickerViewManagerDelegate: class {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
 }
 
+public typealias SelectedRowsHandler1 = (Int) -> Void
+public typealias SelectedRowsHandler2 = (Int, Int) -> Void
+public typealias SelectedRowsHandler3 = (Int, Int, Int) -> Void
+public typealias SelectedRowsHandler4 = (Int, Int, Int, Int) -> Void
+public typealias SelectedRowsHandler5 = (Int, Int, Int, Int, Int) -> Void
+public typealias SelectedRowsHandler6 = (Int, Int, Int, Int, Int, Int) -> Void
+
 open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adaptor, A: SpecificAdaptor {
 
-    unowned let pickerView: UIPickerView
+    public unowned let pickerView: UIPickerView
+    
     private lazy var adaptor = A(delegate: self)
-
+    
+    private var selectedRows: [Int] = []
+    private var selectedRowsHandler: (([Int]) -> Void)?
+    
     var components: [ComponentItem<A>] = [] {
         didSet {
+            selectedRows = Array(repeating: 0, count: components.count)
+            
             for component in components {
                 component.pickerViewManager = self
                 component.pickerView = pickerView
+                component.didSelectRowItem = { [unowned self] componentItem, row, _ in
+                    if let componentIndex = componentItem.index {
+                        self.selectedRows[componentIndex] = row
+                        self.selectedRowsHandler?(self.selectedRows)
+                    }
+                }
             }
             pickerView.reloadAllComponents()
         }
@@ -39,6 +58,44 @@ open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adapt
 
         pickerView.dataSource = self
         pickerView.delegate = adaptor
+    }
+    
+    // MARK: - Selection
+    
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler1) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0])
+        }
+    }
+    
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler2) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0], selectedRows[1])
+        }
+    }
+    
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler3) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0], selectedRows[1], selectedRows[2])
+        }
+    }
+
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler4) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3])
+        }
+    }
+    
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler5) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4])
+        }
+    }
+    
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler6) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[6])
+        }
     }
     
     // MARK: - UIPickerViewDataSource
