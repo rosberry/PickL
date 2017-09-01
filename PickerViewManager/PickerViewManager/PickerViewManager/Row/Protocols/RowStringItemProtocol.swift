@@ -1,8 +1,4 @@
 //
-//  RowStringItemProtocol.swift
-//  Obolus
-//
-//  Created by Nikita Ermolenko on 17/08/2017.
 //  Copyright © 2017 Rosberry. All rights reserved.
 //
 

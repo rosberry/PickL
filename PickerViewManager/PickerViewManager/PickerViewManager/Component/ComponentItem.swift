@@ -1,8 +1,4 @@
 //
-//  ComponentItem.swift
-//  Obolus
-//
-//  Created by Nikita Ermolenko on 16/08/2017.
 //  Copyright © 2017 Rosberry. All rights reserved.
 //
 
@@ -23,11 +19,7 @@ open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     public weak var pickerViewManager: PickerViewManager<A>?
     public weak var pickerView: UIPickerView?
     
-    public var didSelectRowItem: RowSelectionHandler? {
-        didSet {
-            print("set \(didSelectRowItem)")
-        }
-    }
+    public var didSelectRowItem: RowSelectionHandler?
     
     public var index: Int? {
         let index = pickerViewManager?.components.index(where: { item in
