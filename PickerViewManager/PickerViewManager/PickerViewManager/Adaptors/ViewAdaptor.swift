@@ -8,17 +8,11 @@
 
 import UIKit
 
-public final class ViewAdaptor: NSObject, Adaptor {
+public final class ViewAdaptor: Adaptor, SpecificAdaptor {
 
     public typealias RowItemType = RowViewItemProtocol
-    public var components: [ComponentItem<ViewAdaptor>] = []
-}
-
-// MARK: - UIPickerViewDelegate
-
-public extension ViewAdaptor {
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        return components[component][row].pickerView(pickerView, viewForRow: row, forComponent: component, reusing: view)
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        return delegate.pickerView(pickerView, viewForRow: row, forComponent: component, reusing: view)
     }
 }

@@ -8,30 +8,23 @@
 
 import UIKit
 
-public protocol Adaptor: class, UIPickerViewDelegate {
-    
-    associatedtype RowItemType
-    
-    var components: [ComponentItem<Self>] { get set }
-    init()
+public protocol SpecificAdaptor: class {    
+    associatedtype RowItemType = RowItemProtocol
 }
 
-// MARK: - UIPickerViewDelegate
+public class Adaptor: NSObject, UIPickerViewDelegate {
 
-public extension Adaptor {
+    unowned var delegate: PickerViewManagerDelegate
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return components[component].pickerView(pickerView, widthForComponent: component)
+    required public init(delegate: PickerViewManagerDelegate) {
+        self.delegate = delegate
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return components[component].pickerView(pickerView, rowHeightForComponent: component)
+    public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return delegate.pickerView(pickerView, widthForComponent: component)
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let componentItem = components[component]
-        if let rowItem = componentItem[row] as? RowItemProtocol {
-            rowItem.pickerView(pickerView, didSelectRow: row, inComponent: component)
-        }
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        delegate.pickerView(pickerView, didSelectRow: row, inComponent: component)
     }
 }

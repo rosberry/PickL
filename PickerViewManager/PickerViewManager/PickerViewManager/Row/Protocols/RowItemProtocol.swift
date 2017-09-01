@@ -10,11 +10,12 @@ import UIKit
 
 fileprivate struct AssociatedKeys {
     static var didSelectHandler = "rsb_didSelectHandler"
+    static var internalItemDidSelectHandler = "rsb_internalItemDidSelectHandler"
 }
 
-public typealias Row = Int
-public typealias Component = Int
-public typealias SelectionHandler = ((UIPickerView, Row, Component) -> Void)
+public typealias RowIndex = Int
+public typealias ComponentIndex = Int
+public typealias SelectionHandler = ((UIPickerView, RowIndex, ComponentIndex) -> Void)
 
 public protocol RowItemProtocol {
 
@@ -24,7 +25,7 @@ public protocol RowItemProtocol {
 
 public extension RowItemProtocol {
     
-    public var itemDidSelectHandler: SelectionHandler? {
+    var itemDidSelectHandler: SelectionHandler? {
         get {
             return ClosureWrapper<SelectionHandler>.handler(for: self, key: &AssociatedKeys.didSelectHandler)
         }
@@ -35,5 +36,18 @@ public extension RowItemProtocol {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         itemDidSelectHandler?(pickerView, row, component)
+        internalItemDidSelectHandler?(pickerView, row, component)
+    }
+}
+
+extension RowItemProtocol {
+    
+    var internalItemDidSelectHandler: SelectionHandler? {
+        get {
+            return ClosureWrapper<SelectionHandler>.handler(for: self, key: &AssociatedKeys.internalItemDidSelectHandler)
+        }
+        set {
+            ClosureWrapper<SelectionHandler>.setHandler(newValue, for: self, key: &AssociatedKeys.internalItemDidSelectHandler)
+        }
     }
 }

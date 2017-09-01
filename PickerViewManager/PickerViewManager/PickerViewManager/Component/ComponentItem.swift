@@ -8,18 +8,22 @@
 
 import UIKit
 
-typealias StringRowItem = StringAdaptor
-typealias ViewRowItem = ViewAdaptor
+open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
 
-open class ComponentItem<AdaptorType> where AdaptorType: Adaptor {
-
-    public typealias RowType = AdaptorType.RowItemType
+    public typealias RowType = A.RowItemType
+    public typealias RowSelectionHandler = (ComponentItem<A>, Int, RowType) -> Void
     
     public var width: CGFloat?
-    public var rowItems: [RowType]
+    public var rowItems: [RowType] {
+        didSet {
+            configureRowItems()
+        }
+    }
 
-    public weak var pickerViewManager: PickerViewManager<AdaptorType>?
+    public weak var pickerViewManager: PickerViewManager<A>?
     public weak var pickerView: UIPickerView?
+    
+    public var didSelectRowItem: RowSelectionHandler?
     
     public var index: Int? {
         let index = pickerViewManager?.components.index(where: { item in
@@ -30,6 +34,7 @@ open class ComponentItem<AdaptorType> where AdaptorType: Adaptor {
     
     public init(rowItems: [RowType]) {
         self.rowItems = rowItems
+        configureRowItems()
     }
     
     open func reload() {
@@ -43,6 +48,21 @@ open class ComponentItem<AdaptorType> where AdaptorType: Adaptor {
         assert(index < rowItems.count, "Index(\(index) outside of row items count(\(rowItems.count)).")
         
         return rowItems[index]
+    }
+    
+    private func configureRowItems() {
+        rowItems
+            .flatMap { rowItem -> RowItemProtocol? in
+                rowItem as? RowItemProtocol
+            }
+            .forEach { rowItem in
+                var rowItem = rowItem
+                rowItem.internalItemDidSelectHandler = { [unowned self] _, rowIndex, componentIndex in
+                    if let selectedRowItem = self.selectedRowItem {
+                        self.didSelectRowItem?(self, rowIndex, selectedRowItem)
+                    }
+                }
+            }
     }
 }
 
@@ -117,9 +137,5 @@ public extension ComponentItem {
             }
         }
         return (pickerView.bounds.width - widthSum) / CGFloat(pickerViewManager.components.count - numberOfComponentsWithWidth)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return pickerView.bounds.height
     }
 }

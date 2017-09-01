@@ -12,8 +12,10 @@ class ViewController: UIViewController {
 
     let pickerView = UIPickerView()
     
-    lazy var pickerViewManager: PickerViewManager<StringAdaptor> = {
-        return PickerViewManager<StringAdaptor>(pickerView: self.pickerView)
+    typealias A = StringAdaptor
+    
+    lazy var pickerViewManager: PickerViewManager<A> = {
+        return PickerViewManager<A>(pickerView: self.pickerView)
     }()
     
     override func viewDidLoad() {
@@ -24,10 +26,24 @@ class ViewController: UIViewController {
 
         let rowItems1 = RowStringItem(title: "1")
         let rowItems2 = RowStringItem(title: "2")
-
-        let component1 = ComponentItem<StringRowItem>(rowItems: [rowItems1, rowItems2])
-        let component2 = ComponentItem<StringRowItem>(rowItems: [rowItems1, rowItems2])
-        let component3 = ComponentItem<StringRowItem>(rowItems: [rowItems1, rowItems2])
+//
+//        let rowItems1 = UIView()
+//        rowItems1.backgroundColor = .yellow
+//
+//        let rowItems2 = UIView()
+//        rowItems2.backgroundColor = .green
+        
+        let component1 = ComponentItem<A>(rowItems: [rowItems1, rowItems2])
+        component1.didSelectRowItem = { _, index, rowItem in
+            print("\(index)")
+        }
+        
+        let component2 = ComponentItem<A>(rowItems: [rowItems1, rowItems2])
+        component2.didSelectRowItem = { _, index, rowItem in
+            print("\(index)")
+        }
+        
+        let component3 = ComponentItem<A>(rowItems: [rowItems1, rowItems2])
 
         pickerViewManager.components = [component1, component2, component3]
     }
