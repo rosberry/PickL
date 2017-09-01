@@ -12,6 +12,7 @@ import PickL
 class ViewController: UIViewController {
 
     let pickerView = UIPickerView()
+    lazy var pickL = PickL<StringAdaptor>(pickerView: self.pickerView)
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,7 +22,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource where A: Adaptor, A: Speci
     public private(set) var selectedRows: [Int] = []
     private var selectedRowsHandler: (([Int]) -> Void)?
     
-    var components: [ComponentItem<A>] = [] {
+    public var components: [ComponentItem<A>] = [] {
         didSet {
             selectedRows = Array(repeating: 0, count: components.count)
             
@@ -40,7 +40,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource where A: Adaptor, A: Speci
         }
     }
     
-    init(pickerView: UIPickerView) {
+    public init(pickerView: UIPickerView) {
         self.pickerView = pickerView
         
         super.init()

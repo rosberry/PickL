@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8448D99A1F5972CD004033DE /* PickL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8448D9711F5971F4004033DE /* PickL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8448D99B1F5972D2004033DE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8448D9701F5971F4004033DE /* Info.plist */; };
+		84F9A5F91F59B4F700EA0DA3 /* Adaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99C1F597301004033DE /* Adaptor.swift */; };
+		84F9A5FA1F59B4F700EA0DA3 /* StringAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99D1F597301004033DE /* StringAdaptor.swift */; };
+		84F9A5FB1F59B4F700EA0DA3 /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99E1F597301004033DE /* ViewAdaptor.swift */; };
+		84F9A5FC1F59B4FC00EA0DA3 /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99F1F59730C004033DE /* ClosureWrapper.swift */; };
+		84F9A5FD1F59B50800EA0DA3 /* ComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A01F597321004033DE /* ComponentItem.swift */; };
+		84F9A5FE1F59B50C00EA0DA3 /* Foundation+RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A21F597337004033DE /* Foundation+RowItem.swift */; };
+		84F9A5FF1F59B50C00EA0DA3 /* UIView+RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A11F597337004033DE /* UIView+RowItem.swift */; };
+		84F9A6001F59B51000EA0DA3 /* RowStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A61F597367004033DE /* RowStringItem.swift */; };
+		84F9A6011F59B51300EA0DA3 /* RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A51F597360004033DE /* RowItemProtocol.swift */; };
+		84F9A6021F59B51300EA0DA3 /* RowStringItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A41F597360004033DE /* RowStringItemProtocol.swift */; };
+		84F9A6031F59B51300EA0DA3 /* RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A31F597360004033DE /* RowViewItemProtocol.swift */; };
+		84F9A6041F59B51B00EA0DA3 /* PickL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9931F59726B004033DE /* PickL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,7 +229,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8448D99B1F5972D2004033DE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +239,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F9A5FD1F59B50800EA0DA3 /* ComponentItem.swift in Sources */,
+				84F9A6041F59B51B00EA0DA3 /* PickL.swift in Sources */,
+				84F9A5FF1F59B50C00EA0DA3 /* UIView+RowItem.swift in Sources */,
+				84F9A6031F59B51300EA0DA3 /* RowViewItemProtocol.swift in Sources */,
+				84F9A6011F59B51300EA0DA3 /* RowItemProtocol.swift in Sources */,
+				84F9A5FB1F59B4F700EA0DA3 /* ViewAdaptor.swift in Sources */,
+				84F9A6021F59B51300EA0DA3 /* RowStringItemProtocol.swift in Sources */,
+				84F9A5FE1F59B50C00EA0DA3 /* Foundation+RowItem.swift in Sources */,
+				84F9A6001F59B51000EA0DA3 /* RowStringItem.swift in Sources */,
+				84F9A5FC1F59B4FC00EA0DA3 /* ClosureWrapper.swift in Sources */,
+				84F9A5FA1F59B4F700EA0DA3 /* StringAdaptor.swift in Sources */,
+				84F9A5F91F59B4F700EA0DA3 /* Adaptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
