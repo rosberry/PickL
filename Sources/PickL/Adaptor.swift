@@ -10,9 +10,9 @@ public protocol SpecificAdaptor: class {
 
 public class Adaptor: NSObject, UIPickerViewDelegate {
 
-    unowned var delegate: PickerViewManagerDelegate
+    unowned var delegate: PickLDelegate
     
-    required public init(delegate: PickerViewManagerDelegate) {
+    required public init(delegate: PickLDelegate) {
         self.delegate = delegate
     }
     

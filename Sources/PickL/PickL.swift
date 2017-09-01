@@ -4,7 +4,7 @@
 
 import UIKit
 
-public protocol PickerViewManagerDelegate: class {
+public protocol PickLDelegate: class {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
@@ -13,20 +13,13 @@ public protocol PickerViewManagerDelegate: class {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
 }
 
-public typealias SelectedRowsHandler1 = (Int) -> Void
-public typealias SelectedRowsHandler2 = (Int, Int) -> Void
-public typealias SelectedRowsHandler3 = (Int, Int, Int) -> Void
-public typealias SelectedRowsHandler4 = (Int, Int, Int, Int) -> Void
-public typealias SelectedRowsHandler5 = (Int, Int, Int, Int, Int) -> Void
-public typealias SelectedRowsHandler6 = (Int, Int, Int, Int, Int, Int) -> Void
-
-open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adaptor, A: SpecificAdaptor {
+open class PickL<A>: NSObject, UIPickerViewDataSource where A: Adaptor, A: SpecificAdaptor {
 
     public unowned let pickerView: UIPickerView
     
     private lazy var adaptor = A(delegate: self)
     
-    private var selectedRows: [Int] = []
+    public private(set) var selectedRows: [Int] = []
     private var selectedRowsHandler: (([Int]) -> Void)?
     
     var components: [ComponentItem<A>] = [] {
@@ -34,7 +27,7 @@ open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adapt
             selectedRows = Array(repeating: 0, count: components.count)
             
             for component in components {
-                component.pickerViewManager = self
+                component.PickL = self
                 component.pickerView = pickerView
                 component.didSelectRowItem = { [unowned self] componentItem, row, _ in
                     if let componentIndex = componentItem.index {
@@ -56,7 +49,27 @@ open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adapt
         pickerView.delegate = adaptor
     }
     
-    // MARK: - Selection
+    // MARK: - UIPickerViewDataSource
+
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return components.count
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return components[component].rowItems.count
+    }
+}
+
+// MARK: - Selection
+
+public typealias SelectedRowsHandler1 = (Int) -> Void
+public typealias SelectedRowsHandler2 = (Int, Int) -> Void
+public typealias SelectedRowsHandler3 = (Int, Int, Int) -> Void
+public typealias SelectedRowsHandler4 = (Int, Int, Int, Int) -> Void
+public typealias SelectedRowsHandler5 = (Int, Int, Int, Int, Int) -> Void
+public typealias SelectedRowsHandler6 = (Int, Int, Int, Int, Int, Int) -> Void
+
+extension PickL {
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler1) {
         selectedRowsHandler = { selectedRows in
@@ -75,7 +88,7 @@ open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adapt
             handler(selectedRows[0], selectedRows[1], selectedRows[2])
         }
     }
-
+    
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler4) {
         selectedRowsHandler = { selectedRows in
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3])
@@ -93,21 +106,11 @@ open class PickerViewManager<A>: NSObject, UIPickerViewDataSource where A: Adapt
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[6])
         }
     }
-    
-    // MARK: - UIPickerViewDataSource
-
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return components.count
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return components[component].rowItems.count
-    }
 }
 
-// MARK: - PickerViewManagerDelegate
+// MARK: - PickLDelegate
 
-extension PickerViewManager: PickerViewManagerDelegate {
+extension PickL: PickLDelegate {
     
     public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return components[component].pickerView(pickerView, widthForComponent: component)
@@ -122,7 +125,7 @@ extension PickerViewManager: PickerViewManagerDelegate {
 
 // MARK: RowStringItemProtocol
 
-extension PickerViewManager {
+extension PickL {
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if let rowItem = components[component][row] as? RowStringItemProtocol {
@@ -141,7 +144,7 @@ extension PickerViewManager {
 
 // MARK: RowViewItemProtocol
 
-extension PickerViewManager {
+extension PickL {
 
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         if let rowItem = components[component][row] as? RowViewItemProtocol {

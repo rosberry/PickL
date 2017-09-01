@@ -16,13 +16,13 @@ open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
         }
     }
 
-    public weak var pickerViewManager: PickerViewManager<A>?
+    public weak var PickL: PickL<A>?
     public weak var pickerView: UIPickerView?
     
     public var didSelectRowItem: RowSelectionHandler?
     
     public var index: Int? {
-        let index = pickerViewManager?.components.index(where: { item in
+        let index = PickL?.components.index(where: { item in
             item === self
         })
         return index
@@ -110,12 +110,12 @@ extension ComponentItem {
     }
 }
 
-// MARK: - PickerViewManagerDelegate
+// MARK: - PickLDelegate
 
 public extension ComponentItem {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        guard let pickerViewManager = pickerViewManager else {
+        guard let PickL = PickL else {
             return 0
         }
         
@@ -126,12 +126,12 @@ public extension ComponentItem {
         var numberOfComponentsWithWidth = 0
         var widthSum: CGFloat = 0
         
-        pickerViewManager.components.forEach { component in
+        PickL.components.forEach { component in
             if let width = component.width {
                 numberOfComponentsWithWidth += 1
                 widthSum += width
             }
         }
-        return (pickerView.bounds.width - widthSum) / CGFloat(pickerViewManager.components.count - numberOfComponentsWithWidth)
+        return (pickerView.bounds.width - widthSum) / CGFloat(PickL.components.count - numberOfComponentsWithWidth)
     }
 }
