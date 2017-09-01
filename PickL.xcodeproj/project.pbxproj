@@ -89,8 +89,8 @@
 				8448D98C1F59726B004033DE /* Additions */,
 				8448D98E1F59726B004033DE /* Component */,
 				8448D9901F59726B004033DE /* Extensions */,
-				8448D9931F59726B004033DE /* PickL.swift */,
 				8448D9941F59726B004033DE /* Row */,
+				8448D9931F59726B004033DE /* PickL.swift */,
 			);
 			path = PickL;
 			sourceTree = "<group>";
