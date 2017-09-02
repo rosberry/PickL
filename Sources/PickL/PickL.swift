@@ -13,7 +13,7 @@ public protocol PickLDelegate: class {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
 }
 
-open class PickL<A>: NSObject, UIPickerViewDataSource where A: Adaptor, A: SpecificAdaptor {
+open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Adaptor, A: SpecificAdaptor {
 
     public unowned let pickerView: UIPickerView
     
@@ -68,6 +68,7 @@ public typealias SelectedRowsHandler3 = (Int, Int, Int) -> Void
 public typealias SelectedRowsHandler4 = (Int, Int, Int, Int) -> Void
 public typealias SelectedRowsHandler5 = (Int, Int, Int, Int, Int) -> Void
 public typealias SelectedRowsHandler6 = (Int, Int, Int, Int, Int, Int) -> Void
+public typealias SelectedRowsHandler7 = (Int, Int, Int, Int, Int, Int, Int) -> Void
 
 extension PickL {
     
@@ -103,20 +104,29 @@ extension PickL {
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler6) {
         selectedRowsHandler = { selectedRows in
-            handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[6])
+            handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[5])
+        }
+    }
+
+    @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler7) {
+        selectedRowsHandler = { selectedRows in
+            handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[5], selectedRows[6])
         }
     }
 }
 
 // MARK: - PickLDelegate
 
-extension PickL: PickLDelegate {
+extension PickL {
     
     public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return components[component].pickerView(pickerView, widthForComponent: component)
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRows[component] = row
+        selectedRowsHandler?(selectedRows)
+
         if let rowItem = components[component][row] as? RowItemProtocol {
             rowItem.pickerView(pickerView, didSelectRow: row, inComponent: component)
         }
