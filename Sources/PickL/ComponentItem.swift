@@ -6,23 +6,30 @@ import UIKit
 
 open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
 
+    public enum Size {
+        case value(CGFloat)
+        case auto
+    }
+
     public typealias RowType = A.RowItemType
-    public typealias RowSelectionHandler = (ComponentItem<A>, Int, RowType) -> Void
+    public typealias SelectedRowHandler = (ComponentItem<A>, Int, RowType) -> Void
     
-    public var width: CGFloat?
+    public var width: Size = .auto
+    public var height: Size = .auto
+
     public var rowItems: [RowType] {
         didSet {
             configureRowItems()
         }
     }
 
-    public weak var PickL: PickL<A>?
+    public weak var pickL: PickL<A>?
     public weak var pickerView: UIPickerView?
     
-    public var didSelectRowItem: RowSelectionHandler?
+    public var didSelectRowHandler: SelectedRowHandler?
     
     public var index: Int? {
-        let index = PickL?.components.index(where: { item in
+        let index = pickL?.components.index(where: { item in
             item === self
         })
         return index
@@ -55,7 +62,7 @@ open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
                 var rowItem = rowItem
                 rowItem.internalItemDidSelectHandler = { [unowned self] _, rowIndex, componentIndex in
                     if let selectedRowItem = self.selectedRowItem {
-                        self.didSelectRowItem?(self, rowIndex, selectedRowItem)
+                        self.didSelectRowHandler?(self, rowIndex, selectedRowItem)
                     }
                 }
             }
@@ -110,28 +117,15 @@ extension ComponentItem {
     }
 }
 
-// MARK: - PickLDelegate
+// MARK: - Component item delegate
 
 public extension ComponentItem {
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        guard let PickL = PickL else {
-            return 0
-        }
-        
-        if let width = width {
-            return width
-        }
-        
-        var numberOfComponentsWithWidth = 0
-        var widthSum: CGFloat = 0
-        
-        PickL.components.forEach { component in
-            if let width = component.width {
-                numberOfComponentsWithWidth += 1
-                widthSum += width
-            }
-        }
-        return (pickerView.bounds.width - widthSum) / CGFloat(PickL.components.count - numberOfComponentsWithWidth)
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> Size {
+        return width
+    }
+
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> Size {
+        return height
     }
 }

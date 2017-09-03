@@ -9,6 +9,8 @@
 import UIKit
 import PickL
 
+class RowStringItem2: RowStringItem {}
+
 class ViewController: UIViewController {
 
     let pickerView = UIPickerView()
@@ -16,7 +18,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+
+        let rowItem = RowStringItem2(title: "test")
+        let componentItem = ComponentItem<StringAdaptor>(rowItems: [rowItem])
+        
+        componentItem.didSelectRowHandler = { _, index, item in
+
+        }
     }
 
 }
