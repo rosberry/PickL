@@ -48,7 +48,7 @@ open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     
     open subscript(index: Int) -> RowType {
         assert(index >= 0, "Index can not be negative.")
-        assert(index < rowItems.count, "Index(\(index) outside of row items count(\(rowItems.count)).")
+        assert(index < rowItems.count, "Index(\(index) out of row items count(\(rowItems.count)) range.")
         
         return rowItems[index]
     }
@@ -89,7 +89,7 @@ extension ComponentItem {
     
     open func selectRow(_ row: Int, animated: Bool) {
         assert(row >= 0, "Selected row can not be a negative.")
-        assert(row < rowItems.count, "Row(\(row) outside of row items count(\(rowItems.count)).")
+        assert(row < rowItems.count, "Row index(\(row) out of row items count(\(rowItems.count)) range.")
         
         if let index = index {
             pickerView?.selectRow(row, inComponent: index, animated: animated)

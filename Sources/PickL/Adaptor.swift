@@ -15,9 +15,13 @@ public class Adaptor: NSObject, UIPickerViewDelegate {
     required public init(delegate: PickLDelegate) {
         self.delegate = delegate
     }
-    
+
     public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return delegate.pickerView(pickerView, widthForComponent: component)
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return delegate.pickerView(pickerView, rowHeightForComponent: component)
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

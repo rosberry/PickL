@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842D16141F5D0B49001B3060 /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847BDB401F59746400EEDE92 /* PickL.framework */; };
+		842D16151F5D0B49001B3060 /* PickL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 847BDB401F59746400EEDE92 /* PickL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8448D9B41F5973F0004033DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9B31F5973F0004033DE /* AppDelegate.swift */; };
 		8448D9B61F5973F0004033DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9B51F5973F0004033DE /* ViewController.swift */; };
 		8448D9B91F5973F0004033DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8448D9B71F5973F0004033DE /* Main.storyboard */; };
 		8448D9BB1F5973F0004033DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8448D9BA1F5973F0004033DE /* Assets.xcassets */; };
 		8448D9BE1F5973F0004033DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8448D9BC1F5973F0004033DE /* LaunchScreen.storyboard */; };
-		84C643611F59748000BA5CC7 /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847BDB401F59746400EEDE92 /* PickL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		842D16161F5D0B49001B3060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847BDB3B1F59746400EEDE92 /* PickL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8448D94E1F596EB4004033DE;
+			remoteInfo = PickL;
+		};
 		847BDB3F1F59746400EEDE92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 847BDB3B1F59746400EEDE92 /* PickL.xcodeproj */;
@@ -24,6 +32,20 @@
 			remoteInfo = PickL;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		842D16181F5D0B49001B3060 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				842D16151F5D0B49001B3060 /* PickL.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8448D9B01F5973F0004033DE /* PickLExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickLExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C643611F59748000BA5CC7 /* PickL.framework in Frameworks */,
+				842D16141F5D0B49001B3060 /* PickL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,10 +118,12 @@
 				8448D9AC1F5973F0004033DE /* Sources */,
 				8448D9AD1F5973F0004033DE /* Frameworks */,
 				8448D9AE1F5973F0004033DE /* Resources */,
+				842D16181F5D0B49001B3060 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				842D16171F5D0B49001B3060 /* PBXTargetDependency */,
 			);
 			name = PickLExample;
 			productName = PickLExample;
@@ -179,6 +203,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		842D16171F5D0B49001B3060 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PickL;
+			targetProxy = 842D16161F5D0B49001B3060 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8448D9B71F5973F0004033DE /* Main.storyboard */ = {
@@ -310,6 +342,7 @@
 		8448D9C31F5973F0004033DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GPVA8JVMU3;
 				INFOPLIST_FILE = PickLExample/Info.plist;
@@ -324,6 +357,7 @@
 		8448D9C41F5973F0004033DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GPVA8JVMU3;
 				INFOPLIST_FILE = PickLExample/Info.plist;

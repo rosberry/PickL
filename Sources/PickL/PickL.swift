@@ -30,12 +30,6 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
             for component in components {
                 component.pickL = self
                 component.pickerView = pickerView
-                component.didSelectRowHandler = { [unowned self] componentItem, row, _ in
-                    if let componentIndex = componentItem.index {
-                        self.selectedRows[componentIndex] = row
-                        self.selectedRowsHandler?(self.selectedRows)
-                    }
-                }
             }
             pickerView.reloadAllComponents()
         }
@@ -53,11 +47,10 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
     open subscript(component: Int, row: Int) -> A.RowItemType {
         assert(component >= 0, "Component index can not be negative.")
         assert(row >= 0, "Row index can not be negative.")
-
-        assert(component < components.count, "Component index(\(component) outside of component items count(\(components.count)).")
+        assert(component < components.count, "Component index(\(component) out of component items count(\(components.count)) range.")
 
         let componentItem = components[component]
-        assert(row < componentItem.rowItems.count, "Row index(\(row) outside of row items count(\(componentItem.rowItems.count)).")
+        assert(row < componentItem.rowItems.count, "Row index(\(row) out of row items count(\(componentItem.rowItems.count)) range.")
 
         return componentItem.rowItems[row]
     }
@@ -137,27 +130,21 @@ public extension PickL {
             return width
         }
 
-        if case let .value(width) = width {
-            return width
-        }
-
         var numberOfComponentsWithWidth = 0
         var widthSum: CGFloat = 0
 
-        pickL.components.forEach { component in
-            if case let .value(width) = width {
+        components.forEach { component in
+            if case let .value(width) = component.width {
                 numberOfComponentsWithWidth += 1
                 widthSum += width
             }
         }
-        return (pickerView.bounds.width - widthSum) / CGFloat(pickL.components.count - numberOfComponentsWithWidth)
-
-
-        return components[component].pickerView(pickerView, widthForComponent: component)
+        return (pickerView.bounds.width - widthSum) / CGFloat(components.count - numberOfComponentsWithWidth)
     }
 
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        if case let .value(height) = components[component].pickerView(pickerView, rowHeightForComponent: component) {
+        let isIndexOfRange = component >= components.count
+        if !isIndexOfRange, case let .value(height) = components[component].pickerView(pickerView, rowHeightForComponent: component) {
             return height
         }
         return 44
