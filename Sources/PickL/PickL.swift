@@ -52,7 +52,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
         }
     }
     
-    /// Initializes and returns a newly allocated pickL object with the specified pickerView.
+    /// Initializes and returns a newly allocated `PickL` object with the specified pickerView.
     public init(pickerView: UIPickerView) {
         self.pickerView = pickerView
         
@@ -87,7 +87,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
 
 // MARK: - Selection
 
-/// Convenience typealiases for `selectedRowsHandler` methods.
+/// Convenient typealiases for `selectedRowsHandler` methods.
 
 public typealias SelectedRowsHandler1 = (RowIndex) -> Void
 public typealias SelectedRowsHandler2 = (RowIndex, RowIndex) -> Void

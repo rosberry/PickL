@@ -4,7 +4,7 @@
 
 import UIKit
 
-/// Convenience extension of `NSAttributedString`.
+/// Convenient extension of `NSAttributedString`.
 ///
 /// ```
 ///  let rowItem = NSAttributedString(string: "Hey", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red])
@@ -17,7 +17,7 @@ extension NSAttributedString: RowStringItemProtocol {
     }
 }
 
-/// Convenience extension of `String`.
+/// Convenient extension of `String`.
 /// ```
 ///  let componentItem = ComponentItem<StringAdaptor>(rowItems: ["item1", "item2"])
 /// ```

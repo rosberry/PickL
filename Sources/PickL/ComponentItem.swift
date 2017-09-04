@@ -25,7 +25,7 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
 
     public typealias RowType = A.RowItemType
     
-    /// Convenience typealias for `didSelectRowHandler`.
+    /// Convenient typealias for `didSelectRowHandler`.
     ///
     /// - Parameters:
     ///   - componentItem: The component item.

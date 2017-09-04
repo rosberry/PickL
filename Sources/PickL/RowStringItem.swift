@@ -4,8 +4,12 @@
 
 import UIKit
 
+/// Convenient class for working `String` representable row items. Handy when you need to implement a `didSelectHandler`.
+///
+/// - note: `String` already conforms to `RowStringItemProtocol`.
 open class RowStringItem {
     
+    /// Title value for row item.
     public var title: String
     
     public init(title: String) {

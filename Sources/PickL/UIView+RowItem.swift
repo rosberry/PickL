@@ -4,7 +4,7 @@
 
 import UIKit
 
-/// Convenience extension of `UIView`.
+/// Convenient extension of `UIView`.
 /// ```
 ///  let view = UIView()
 ///  let componentItem = ComponentItem<ViewAdaptor>(rowItems: [view])
