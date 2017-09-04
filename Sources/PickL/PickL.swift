@@ -126,7 +126,7 @@ extension PickL {
 public extension PickL {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        if case let .value(width) = components[component].pickerView(pickerView, widthForComponent: component) {
+        if case let .value(width) = components[component].width {
             return width
         }
 
@@ -144,7 +144,7 @@ public extension PickL {
 
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         let isIndexOfRange = component >= components.count
-        if !isIndexOfRange, case let .value(height) = components[component].pickerView(pickerView, rowHeightForComponent: component) {
+        if !isIndexOfRange, case let .value(height) = components[component].height {
             return height
         }
         return 44
