@@ -160,7 +160,10 @@ public extension PickL {
         selectedRows[component] = row
         selectedRowsHandler?(selectedRows)
 
-        if let rowItem = components[component][row] as? RowItemProtocol {
+        let componentItem = components[component]
+        componentItem.didSelectRowHandler?(componentItem, row, componentItem.rowItems[row])
+        
+        if let rowItem = componentItem[row] as? RowItemProtocol {
             rowItem.pickerView(pickerView, didSelectRow: row, inComponent: component)
         }
     }

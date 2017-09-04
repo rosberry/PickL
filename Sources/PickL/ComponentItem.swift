@@ -40,11 +40,7 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     public var height: Size = .auto
 
     /// The array of row items with `RowStringItemProtocol` or `RowViewItemProtocol` types.
-    public var rowItems: [RowType] {
-        didSet {
-            configureRowItems()
-        }
-    }
+    public var rowItems: [RowType]
 
     /// The weak reference to `PickL` object.
     public weak var pickL: PickL<A>?
@@ -70,7 +66,6 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     /// - Parameter rowItems: The row items for an allocated component item.
     public init(rowItems: [RowType]) {
         self.rowItems = rowItems
-        configureRowItems()
     }
     
     /// Reload component item.
@@ -88,21 +83,6 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
         assert(index < rowItems.count, "Index(\(index) out of row items count(\(rowItems.count)) range.")
         
         return rowItems[index]
-    }
-    
-    private func configureRowItems() {
-        rowItems
-            .flatMap { rowItem -> RowItemProtocol? in
-                rowItem as? RowItemProtocol
-            }
-            .forEach { rowItem in
-                var rowItem = rowItem
-                rowItem.internalItemDidSelectHandler = { [unowned self] _, rowIndex, componentIndex in
-                    if let selectedRowItem = self.selectedRowItem {
-                        self.didSelectRowHandler?(self, rowIndex, selectedRowItem)
-                    }
-                }
-            }
     }
 }
 
