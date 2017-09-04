@@ -114,7 +114,7 @@ extension ComponentItem {
     ///
     /// - Parameters:
     ///   - row: A zero-indexed number identifying a row of component.
-    ///   - animated: `True` to animate the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
+    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
     public func selectRow(_ row: Int, animated: Bool) {
         assert(row >= 0, "Selected row can not be a negative.")
         assert(row < rowItems.count, "Row index(\(row)) out of row items count(\(rowItems.count)) range.")

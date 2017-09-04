@@ -4,6 +4,7 @@
 
 import UIKit
 
+/// Delegate for convenience work with adaptors.
 public protocol PickLDelegate: class {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat
@@ -14,15 +15,31 @@ public protocol PickLDelegate: class {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView
 }
 
-open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Adaptor, A: SpecificAdaptor {
+public typealias RowIndex = Int
 
+open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Adaptor, A: SpecificAdaptor {
+    
+    /// The reference to `UIPickerView`.
     public unowned let pickerView: UIPickerView
     
     private lazy var adaptor = A(delegate: self)
     
-    public private(set) var selectedRows: [Int] = []
-    private var selectedRowsHandler: (([Int]) -> Void)?
+    /// A Boolean value that determines whether the selection indicator is displayed.
+    public var showsSelectionIndicator: Bool {
+        get {
+            return pickerView.showsSelectionIndicator
+        }
+        set {
+            pickerView.showsSelectionIndicator = showsSelectionIndicator
+        }
+    }
     
+    /// Currect selected row indexes.
+    public private(set) var selectedRows: [RowIndex] = []
+    
+    private var selectedRowsHandler: (([RowIndex]) -> Void)?
+    
+    /// The array of component items with specific row items type.
     public var components: [ComponentItem<A>] = [] {
         didSet {
             selectedRows = Array(repeating: 0, count: components.count)
@@ -35,6 +52,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
         }
     }
     
+    /// Initializes and returns a newly allocated pickL object with the specified pickerView.
     public init(pickerView: UIPickerView) {
         self.pickerView = pickerView
         
@@ -44,6 +62,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
         pickerView.delegate = adaptor
     }
 
+    /// Subscript that returns the row item with specified column and row.
     open subscript(component: Int, row: Int) -> A.RowItemType {
         assert(component >= 0, "Component index can not be negative.")
         assert(row >= 0, "Row index can not be negative.")
@@ -68,22 +87,26 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
 
 // MARK: - Selection
 
-public typealias SelectedRowsHandler1 = (Int) -> Void
-public typealias SelectedRowsHandler2 = (Int, Int) -> Void
-public typealias SelectedRowsHandler3 = (Int, Int, Int) -> Void
-public typealias SelectedRowsHandler4 = (Int, Int, Int, Int) -> Void
-public typealias SelectedRowsHandler5 = (Int, Int, Int, Int, Int) -> Void
-public typealias SelectedRowsHandler6 = (Int, Int, Int, Int, Int, Int) -> Void
-public typealias SelectedRowsHandler7 = (Int, Int, Int, Int, Int, Int, Int) -> Void
+/// Convenience typealiases for `selectedRowsHandler` methods.
+
+public typealias SelectedRowsHandler1 = (RowIndex) -> Void
+public typealias SelectedRowsHandler2 = (RowIndex, RowIndex) -> Void
+public typealias SelectedRowsHandler3 = (RowIndex, RowIndex, RowIndex) -> Void
+public typealias SelectedRowsHandler4 = (RowIndex, RowIndex, RowIndex, RowIndex) -> Void
+public typealias SelectedRowsHandler5 = (RowIndex, RowIndex, RowIndex, RowIndex, RowIndex) -> Void
+public typealias SelectedRowsHandler6 = (RowIndex, RowIndex, RowIndex, RowIndex, RowIndex, RowIndex) -> Void
+public typealias SelectedRowsHandler7 = (RowIndex, RowIndex, RowIndex, RowIndex, RowIndex, RowIndex, RowIndex) -> Void
 
 extension PickL {
     
+    /// The handler for detecting row selection in one component.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler1) {
         selectedRowsHandler = { selectedRows in
             handler(selectedRows[0])
         }
     }
     
+    /// The handler for detecting rows selection in two components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler2) {
         selectedRowsHandler = { [unowned self] selectedRows in
             assert(self.components.count >= 2, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
@@ -91,6 +114,7 @@ extension PickL {
         }
     }
     
+    /// The handler for detecting rows selection in three components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler3) {
         selectedRowsHandler = { [unowned self] selectedRows in
             assert(self.components.count >= 3, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
@@ -98,6 +122,7 @@ extension PickL {
         }
     }
     
+    /// The handler for detecting rows selection in four components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler4) {
         selectedRowsHandler = { [unowned self] selectedRows in
             assert(self.components.count >= 4, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
@@ -105,6 +130,7 @@ extension PickL {
         }
     }
     
+    /// The handler for detecting rows selection in five components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler5) {
         selectedRowsHandler = { [unowned self] selectedRows in
             assert(self.components.count >= 5, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
@@ -112,6 +138,7 @@ extension PickL {
         }
     }
     
+    /// The handler for detecting rows selection in six components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler6) {
         selectedRowsHandler = { [unowned self] selectedRows in
             assert(self.components.count >= 6, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
@@ -119,6 +146,7 @@ extension PickL {
         }
     }
 
+    /// The handler for detecting rows selection in seven components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler7) {
         selectedRowsHandler = { [unowned self] selectedRows in
             assert(self.components.count >= 7, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
