@@ -4,7 +4,7 @@
 
 import UIKit
 
-open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
+public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
 
     public enum Size {
         case value(CGFloat)
@@ -40,13 +40,13 @@ open class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
         configureRowItems()
     }
     
-    open func reload() {
+    public func reload() {
         if let index = index {
             pickerView?.reloadComponent(index)
         }
     }
     
-    open subscript(index: Int) -> RowType {
+    public subscript(index: Int) -> RowType {
         assert(index >= 0, "Index can not be negative.")
         assert(index < rowItems.count, "Index(\(index) out of row items count(\(rowItems.count)) range.")
         
@@ -87,7 +87,7 @@ extension ComponentItem {
         return pickerView?.selectedRow(inComponent: index)
     }
     
-    open func selectRow(_ row: Int, animated: Bool) {
+    public func selectRow(_ row: Int, animated: Bool) {
         assert(row >= 0, "Selected row can not be a negative.")
         assert(row < rowItems.count, "Row index(\(row) out of row items count(\(rowItems.count)) range.")
         
@@ -96,23 +96,23 @@ extension ComponentItem {
         }
     }
     
-    open func selectNextRow(animated: Bool) {
+    public func selectNextRow(animated: Bool) {
         if let selectedRowIndex = selectedRowIndex {
             selectRow(selectedRowIndex + 1, animated: animated)
         }
     }
     
-    open func selectPreviousRow(animated: Bool) {
+    public func selectPreviousRow(animated: Bool) {
         if let selectedRowIndex = selectedRowIndex {
             selectRow(selectedRowIndex - 1, animated: animated)
         }
     }
     
-    open func selectFirstRow(animated: Bool) {
+    public func selectFirstRow(animated: Bool) {
         selectRow(0, animated: animated)
     }
     
-    open func selectLastRow(animated: Bool) {
+    public func selectLastRow(animated: Bool) {
         selectRow(rowItems.count - 1, animated: animated)
     }
 }
