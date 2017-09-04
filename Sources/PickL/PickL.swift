@@ -85,37 +85,43 @@ extension PickL {
     }
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler2) {
-        selectedRowsHandler = { selectedRows in
+        selectedRowsHandler = { [unowned self] selectedRows in
+            assert(self.components.count >= 2, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
             handler(selectedRows[0], selectedRows[1])
         }
     }
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler3) {
-        selectedRowsHandler = { selectedRows in
+        selectedRowsHandler = { [unowned self] selectedRows in
+            assert(self.components.count >= 3, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2])
         }
     }
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler4) {
-        selectedRowsHandler = { selectedRows in
+        selectedRowsHandler = { [unowned self] selectedRows in
+            assert(self.components.count >= 4, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3])
         }
     }
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler5) {
-        selectedRowsHandler = { selectedRows in
+        selectedRowsHandler = { [unowned self] selectedRows in
+            assert(self.components.count >= 5, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4])
         }
     }
     
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler6) {
-        selectedRowsHandler = { selectedRows in
+        selectedRowsHandler = { [unowned self] selectedRows in
+            assert(self.components.count >= 6, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[5])
         }
     }
 
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler7) {
-        selectedRowsHandler = { selectedRows in
+        selectedRowsHandler = { [unowned self] selectedRows in
+            assert(self.components.count >= 7, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[5], selectedRows[6])
         }
     }
