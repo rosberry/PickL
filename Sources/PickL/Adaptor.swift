@@ -8,6 +8,7 @@ public protocol SpecificAdaptor: class {
     associatedtype RowItemType = RowItemProtocol
 }
 
+/// Base adaptor for working with string/view representable row items.
 public class Adaptor: NSObject, UIPickerViewDelegate {
 
     unowned var delegate: PickLDelegate
@@ -16,6 +17,8 @@ public class Adaptor: NSObject, UIPickerViewDelegate {
         self.delegate = delegate
     }
 
+    // MARK: - UIPickerViewDelegate
+    
     public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return delegate.pickerView(pickerView, widthForComponent: component)
     }
