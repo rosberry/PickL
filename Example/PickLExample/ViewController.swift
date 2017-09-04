@@ -37,9 +37,21 @@ class ViewController: UIViewController {
         let componentItem2 = ComponentItem<StringAdaptor>(rowItems: [rowItem4, rowItem5, rowItem6])
         componentItem2.height = .auto
 
-        pickL.components = [componentItem1, componentItem2]
+        pickL.components = [componentItem1]
         pickL.selectedRowsHandler { rowIndex1, rowIndex2 in
             print("\(rowIndex1), \(rowIndex2)")
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+            componentItem1.selectLastRow(animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+                componentItem1.selectFirstRow(animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+                    componentItem1.selectPreviousRow(animated: true, isLoopEnabled: true)
+                }
+            }
         }
     }
     

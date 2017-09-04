@@ -47,10 +47,10 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
     open subscript(component: Int, row: Int) -> A.RowItemType {
         assert(component >= 0, "Component index can not be negative.")
         assert(row >= 0, "Row index can not be negative.")
-        assert(component < components.count, "Component index(\(component) out of component items count(\(components.count)) range.")
+        assert(component < components.count, "Component index(\(component)) out of component items count(\(components.count)) range.")
 
         let componentItem = components[component]
-        assert(row < componentItem.rowItems.count, "Row index(\(row) out of row items count(\(componentItem.rowItems.count)) range.")
+        assert(row < componentItem.rowItems.count, "Row index(\(row)) out of row items count(\(componentItem.rowItems.count)) range.")
 
         return componentItem.rowItems[row]
     }

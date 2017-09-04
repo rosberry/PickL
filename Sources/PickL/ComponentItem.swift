@@ -4,7 +4,7 @@
 
 import UIKit
 
-public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
+final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
 
     public enum Size {
         case value(CGFloat)
@@ -89,22 +89,46 @@ extension ComponentItem {
     
     public func selectRow(_ row: Int, animated: Bool) {
         assert(row >= 0, "Selected row can not be a negative.")
-        assert(row < rowItems.count, "Row index(\(row) out of row items count(\(rowItems.count)) range.")
+        assert(row < rowItems.count, "Row index(\(row)) out of row items count(\(rowItems.count)) range.")
         
         if let index = index {
             pickerView?.selectRow(row, inComponent: index, animated: animated)
         }
     }
     
-    public func selectNextRow(animated: Bool) {
+    public func selectNextRow(animated: Bool, checkIndexOutOfRange: Bool = true, isLoopEnabled: Bool = false) {
         if let selectedRowIndex = selectedRowIndex {
-            selectRow(selectedRowIndex + 1, animated: animated)
+            let newIndex = selectedRowIndex + 1
+            let indexOutOfRange = newIndex >= rowItems.count
+            
+            if indexOutOfRange, isLoopEnabled {
+                selectRow(0, animated: animated)
+                return
+            }
+            
+            if !checkIndexOutOfRange, indexOutOfRange {
+                return
+            }
+            
+            selectRow(newIndex, animated: animated)
         }
     }
     
-    public func selectPreviousRow(animated: Bool) {
+    public func selectPreviousRow(animated: Bool, checkIndexOutOfRange: Bool = true, isLoopEnabled: Bool = false) {
         if let selectedRowIndex = selectedRowIndex {
-            selectRow(selectedRowIndex - 1, animated: animated)
+            let newIndex = selectedRowIndex - 1
+            let indexOutOfRange = newIndex < 0
+            
+            if indexOutOfRange, isLoopEnabled {
+                selectRow(rowItems.count - 1, animated: animated)
+                return
+            }
+            
+            if !checkIndexOutOfRange, indexOutOfRange {
+                return
+            }
+            
+            selectRow(newIndex, animated: animated)
         }
     }
     
