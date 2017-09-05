@@ -1,7 +1,7 @@
 # PickL
 
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
-[![Swift Version](https://img.shields.io/badge/swift-3.0-orange.svg)](https://swift.org/)
+[![Swift Version](https://img.shields.io/badge/swift-4.0-orange.svg)](https://swift.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 **PickL** is an elegant manager for deal with `UIPickerView`. You don't have to implement a logic for `UIPickerViewDataSource` and `UIPickerViewDelegate` by yourself anymore, it's already done under the hood.
@@ -31,9 +31,7 @@ A bit of terminology - image below explains everything that you need to understa
 	```swift
 	let rowItem1 = NSAttributedString(string: "Nikita", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red])
 	let rowItem2 = NSAttributedString(string: "Artem", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
-	```
-	
-	```swift
+
 	let rowItems: [RowStringItemProtocol] = ["Nikita", "Artem"]
 	```
 		
