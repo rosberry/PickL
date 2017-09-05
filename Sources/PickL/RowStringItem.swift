@@ -4,7 +4,7 @@
 
 import UIKit
 
-/// Convenient class for working `String` representable row items. Handy when you need to implement a `didSelectHandler`.
+/// Convenient class for working with `String` representable row items. Handy when you need to implement a `didSelectHandler`.
 ///
 /// - note: `String` already conforms to `RowStringItemProtocol`.
 open class RowStringItem {

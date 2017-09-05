@@ -31,7 +31,7 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     ///   - componentItem: The component item.
     ///   - rowIndex: The selected row index.
     ///   - rowItem: The selected row item.
-    public typealias SelectedRowHandler = (_ componentItem: ComponentItem<A>, _ rowIndex: Int, _ rowItem: RowType) -> Void
+    public typealias SelectedRowHandler = (_ componentItem: ComponentItem<A>, _ rowIndex: RowIndex, _ rowItem: RowType) -> Void
     
     /// The width of component. `Size.auto` - by default.
     public var width: Size = .auto

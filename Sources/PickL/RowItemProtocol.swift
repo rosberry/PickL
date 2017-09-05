@@ -8,7 +8,7 @@ fileprivate struct AssociatedKeys {
     static var didSelectHandler = "rsb_didSelectHandler"
 }
 
-public typealias SelectionHandler = ((_ pickerView: UIPickerView, _ rowIndex: Int, _ componentIndex: Int) -> Void)
+public typealias SelectionHandler = ((_ rowIndex: RowIndex, _ componentIndex: ComponentIndex) -> Void)
 
 /// Base row item protocol for implementing string/view representable row items.
 ///
@@ -16,7 +16,7 @@ public typealias SelectionHandler = ((_ pickerView: UIPickerView, _ rowIndex: In
 public protocol RowItemProtocol {
 
     /// The handler for detecting row selection.
-    var itemDidSelectHandler: SelectionHandler? { get set }
+    var didSelectHandler: SelectionHandler? { get set }
  
     /// Called by the picker view when the user selects a row in a component.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
@@ -24,7 +24,7 @@ public protocol RowItemProtocol {
 
 public extension RowItemProtocol {
     
-    var itemDidSelectHandler: SelectionHandler? {
+    var didSelectHandler: SelectionHandler? {
         get {
             return ClosureWrapper<SelectionHandler>.handler(for: self, key: &AssociatedKeys.didSelectHandler)
         }
@@ -34,6 +34,6 @@ public extension RowItemProtocol {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        itemDidSelectHandler?(pickerView, row, component)
+        didSelectHandler?(row, component)
     }
 }

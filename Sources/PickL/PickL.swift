@@ -16,6 +16,7 @@ public protocol PickLDelegate: class {
 }
 
 public typealias RowIndex = Int
+public typealias ComponentIndex = Int
 
 open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Adaptor, A: SpecificAdaptor {
     
