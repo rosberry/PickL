@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8448D99A1F5972CD004033DE /* PickL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8448D9711F5971F4004033DE /* PickL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84E945261F5EB98300DFDB0D /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448D94F1F596EB4004033DE /* PickL.framework */; };
 		84F9A5F91F59B4F700EA0DA3 /* Adaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99C1F597301004033DE /* Adaptor.swift */; };
 		84F9A5FA1F59B4F700EA0DA3 /* StringAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99D1F597301004033DE /* StringAdaptor.swift */; };
 		84F9A5FB1F59B4F700EA0DA3 /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99E1F597301004033DE /* ViewAdaptor.swift */; };
@@ -21,6 +22,16 @@
 		84F9A6031F59B51300EA0DA3 /* RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9A31F597360004033DE /* RowViewItemProtocol.swift */; };
 		84F9A6041F59B51B00EA0DA3 /* PickL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D9931F59726B004033DE /* PickL.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E945271F5EB98300DFDB0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8448D9461F596EB4004033DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8448D94E1F596EB4004033DE;
+			remoteInfo = PickL;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8448D94F1F596EB4004033DE /* PickL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PickL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +49,9 @@
 		8448D9A41F597360004033DE /* RowStringItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowStringItemProtocol.swift; path = Sources/PickL/RowStringItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		8448D9A51F597360004033DE /* RowItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowItemProtocol.swift; path = Sources/PickL/RowItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		8448D9A61F597367004033DE /* RowStringItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowStringItem.swift; path = Sources/PickL/RowStringItem.swift; sourceTree = SOURCE_ROOT; };
+		84E945211F5EB98300DFDB0D /* PickLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E9452E1F5EBA4D00DFDB0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLTests.swift; sourceTree = "<group>"; };
 		84EB3A071F5D6BCE00DEEAEA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +63,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E9451E1F5EB98300DFDB0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E945261F5EB98300DFDB0D /* PickL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,7 +79,7 @@
 			children = (
 				84EB3A071F5D6BCE00DEEAEA /* README.md */,
 				8448D95B1F5971F3004033DE /* Sources */,
-				8448D95A1F5971F3004033DE /* Tests */,
+				84E9452C1F5EBA4D00DFDB0D /* Tests */,
 				8448D9501F596EB4004033DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,15 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				8448D94F1F596EB4004033DE /* PickL.framework */,
+				84E945211F5EB98300DFDB0D /* PickLTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8448D95A1F5971F3004033DE /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		8448D95B1F5971F3004033DE /* Sources */ = {
@@ -162,6 +178,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		84E9452C1F5EBA4D00DFDB0D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				84E9452D1F5EBA4D00DFDB0D /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		84E9452D1F5EBA4D00DFDB0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84E9452E1F5EBA4D00DFDB0D /* Info.plist */,
+				84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -194,18 +227,41 @@
 			productReference = 8448D94F1F596EB4004033DE /* PickL.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		84E945201F5EB98300DFDB0D /* PickLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E9452B1F5EB98300DFDB0D /* Build configuration list for PBXNativeTarget "PickLTests" */;
+			buildPhases = (
+				84E9451D1F5EB98300DFDB0D /* Sources */,
+				84E9451E1F5EB98300DFDB0D /* Frameworks */,
+				84E9451F1F5EB98300DFDB0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E945281F5EB98300DFDB0D /* PBXTargetDependency */,
+			);
+			name = PickLTests;
+			productName = PickLTests;
+			productReference = 84E945211F5EB98300DFDB0D /* PickLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8448D9461F596EB4004033DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Rosberry;
 				TargetAttributes = {
 					8448D94E1F596EB4004033DE = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+					};
+					84E945201F5EB98300DFDB0D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -222,12 +278,20 @@
 			projectRoot = "";
 			targets = (
 				8448D94E1F596EB4004033DE /* PickL */,
+				84E945201F5EB98300DFDB0D /* PickLTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8448D94D1F596EB4004033DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E9451F1F5EB98300DFDB0D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,7 +320,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E9451D1F5EB98300DFDB0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E945281F5EB98300DFDB0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8448D94E1F596EB4004033DE /* PickL */;
+			targetProxy = 84E945271F5EB98300DFDB0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8448D9551F596EB4004033DE /* Debug */ = {
@@ -419,6 +498,34 @@
 			};
 			name = Release;
 		};
+		84E945291F5EB98300DFDB0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GPVA8JVMU3;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.PickLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84E9452A1F5EB98300DFDB0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GPVA8JVMU3;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.PickLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,6 +543,15 @@
 			buildConfigurations = (
 				8448D9581F596EB4004033DE /* Debug */,
 				8448D9591F596EB4004033DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E9452B1F5EB98300DFDB0D /* Build configuration list for PBXNativeTarget "PickLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E945291F5EB98300DFDB0D /* Debug */,
+				84E9452A1F5EB98300DFDB0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
