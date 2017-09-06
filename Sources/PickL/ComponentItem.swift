@@ -114,7 +114,8 @@ extension ComponentItem {
     ///
     /// - Parameters:
     ///   - row: A zero-indexed number identifying a row of component.
-    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
+    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value.
+    ///                If you specify false, the new selection is shown immediately.
     public func selectRow(_ row: Int, animated: Bool) {
         assert(row >= 0, "Selected row can not be a negative.")
         assert(row < rowItems.count, "Row index(\(row)) out of row items count(\(rowItems.count)) range.")
@@ -127,7 +128,8 @@ extension ComponentItem {
     /// Select the next row item for the current one.
     ///
     /// - Parameters:
-    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
+    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value.
+    ///                If you specify false, the new selection is shown immediately.
     ///   - checkIndexOutOfRange: `True` - generates exeption if the next selected index is out of range. `true` - by default.
     ///   - isLoopEnabled: `True` - selects the first row item if index out of range. `false` - by default.
     public func selectNextRow(animated: Bool, checkIndexOutOfRange: Bool = true, isLoopEnabled: Bool = false) {
@@ -150,7 +152,8 @@ extension ComponentItem {
     /// Selects the previous row item before the current one.
     ///
     /// - Parameters:
-    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
+    ///   - animated: `True` - animates the selection by spinning the wheel (component) to the new value.
+    ///                If you specify false, the new selection is shown immediately.
     ///   - checkIndexOutOfRange: `True` - generates exeption if the previous selected index is out of range. `true` - by default.
     ///   - isLoopEnabled: `True` - selects the last row item if index out of range. `false` - by default.
     public func selectPreviousRow(animated: Bool, checkIndexOutOfRange: Bool = true, isLoopEnabled: Bool = false) {
@@ -172,14 +175,16 @@ extension ComponentItem {
     
     /// Selects the first row item.
     ///
-    /// - Parameter animated: `True` - animates the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
+    /// - Parameter animated: `True` - animates the selection by spinning the wheel (component) to the new value.
+    ///                        If you specify false, the new selection is shown immediately.
     public func selectFirstRow(animated: Bool) {
         selectRow(0, animated: animated)
     }
     
     /// Selects the last row item.
     ///
-    /// - Parameter animated: `True` - animates the selection by spinning the wheel (component) to the new value; if you specify false, the new selection is shown immediately.
+    /// - Parameter animated: `True` - animates the selection by spinning the wheel (component) to the new value.
+    ///                        If you specify false, the new selection is shown immediately.
     public func selectLastRow(animated: Bool) {
         selectRow(rowItems.count - 1, animated: animated)
     }

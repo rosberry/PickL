@@ -110,7 +110,8 @@ extension PickL {
     /// The handler for detecting rows selection in two components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler2) {
         selectedRowsHandler = { [unowned self] selectedRows in
-            assert(self.components.count >= 2, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
+            let count = self.components.count
+            assert(count >= 2, "This `selectedRowsHandler` is inappropriate for your components count (\(count)).")
             handler(selectedRows[0], selectedRows[1])
         }
     }
@@ -118,7 +119,8 @@ extension PickL {
     /// The handler for detecting rows selection in three components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler3) {
         selectedRowsHandler = { [unowned self] selectedRows in
-            assert(self.components.count >= 3, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
+            let count = self.components.count
+            assert(count >= 3, "This `selectedRowsHandler` is inappropriate for your components count (\(count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2])
         }
     }
@@ -126,7 +128,8 @@ extension PickL {
     /// The handler for detecting rows selection in four components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler4) {
         selectedRowsHandler = { [unowned self] selectedRows in
-            assert(self.components.count >= 4, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
+            let count = self.components.count
+            assert(count >= 4, "This `selectedRowsHandler` is inappropriate for your components count (\(count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3])
         }
     }
@@ -134,7 +137,8 @@ extension PickL {
     /// The handler for detecting rows selection in five components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler5) {
         selectedRowsHandler = { [unowned self] selectedRows in
-            assert(self.components.count >= 5, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
+            let count = self.components.count
+            assert(count >= 5, "This `selectedRowsHandler` is inappropriate for your components count (\(count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4])
         }
     }
@@ -142,7 +146,8 @@ extension PickL {
     /// The handler for detecting rows selection in six components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler6) {
         selectedRowsHandler = { [unowned self] selectedRows in
-            assert(self.components.count >= 6, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
+            let count = self.components.count
+            assert(count >= 6, "This `selectedRowsHandler` is inappropriate for your components count (\(count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[5])
         }
     }
@@ -150,7 +155,8 @@ extension PickL {
     /// The handler for detecting rows selection in seven components. From right to left.
     @nonobjc public func selectedRowsHandler(_ handler: @escaping SelectedRowsHandler7) {
         selectedRowsHandler = { [unowned self] selectedRows in
-            assert(self.components.count >= 7, "This `selectedRowsHandler` is inappropriate for your components count (\(self.components.count)).")
+            let count = self.components.count
+            assert(count >= 7, "This `selectedRowsHandler` is inappropriate for your components count (\(count)).")
             handler(selectedRows[0], selectedRows[1], selectedRows[2], selectedRows[3], selectedRows[4], selectedRows[5], selectedRows[6])
         }
     }
