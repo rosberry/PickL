@@ -80,7 +80,7 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     /// Subscript that returns the row item with specified index.
     public subscript(index: Int) -> RowType {
         assert(index >= 0, "Index can not be negative.")
-        assert(index < rowItems.count, "Index(\(index) out of row items count(\(rowItems.count)) range.")
+        assert(index < rowItems.count, "Index(\(index)) out of row items count(\(rowItems.count)) range.")
         
         return rowItems[index]
     }
