@@ -186,21 +186,13 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		84C830AD1F5FAD1F0086CE09 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				84C830AE1F5FAD600086CE09 /* ItemsFactory.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		84E9452C1F5EBA4D00DFDB0D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */,
 				84E945311F5EBC8E00DFDB0D /* SelectionTests.swift */,
 				848CED481F5FCE6700E33424 /* ComponentItemTests.swift */,
-				84C830AD1F5FAD1F0086CE09 /* Helpers */,
+				84C830AE1F5FAD600086CE09 /* ItemsFactory.swift */,
 				84E9452D1F5EBA4D00DFDB0D /* Supporting Files */,
 			);
 			path = Tests;
