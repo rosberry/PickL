@@ -1,8 +1,4 @@
 //
-//  SelectionTests.swift
-//  PickLTests
-//
-//  Created by Nikita Ermolenko on 05/09/2017.
 //  Copyright © 2017 Rosberry. All rights reserved.
 //
 

@@ -1,8 +1,4 @@
 //
-//  ViewController.swift
-//  PickLExample
-//
-//  Created by Nikita Ermolenko on 01/09/2017.
 //  Copyright © 2017 Rosberry. All rights reserved.
 //
 
