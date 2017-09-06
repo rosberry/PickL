@@ -21,23 +21,22 @@ class ViewController: UIViewController {
 
         view.addSubview(pickerView)
         
-        let rowItem1 = NSAttributedString(string: "Hey", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red])
-        let rowItem2 = NSAttributedString(string: "Hey", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
-        let rowItem3 = NSAttributedString(string: "Hey", attributes: [NSAttributedStringKey.foregroundColor: UIColor.green])
+        let redRowItem = NSAttributedString(string: "Red", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red])
+        let blackRowItem = NSAttributedString(string: "Black", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
+        let greenRowItem = NSAttributedString(string: "Green", attributes: [NSAttributedStringKey.foregroundColor: UIColor.green])
 
-        let componentItem1 = ComponentItem<StringAdaptor>(rowItems: [rowItem1, rowItem2, rowItem3])
-        componentItem1.height = .auto
-        componentItem1.width = .value(80)
+        let colorsComponentItem = ComponentItem<StringAdaptor>(rowItems: [redRowItem, blackRowItem, greenRowItem])
+        colorsComponentItem.width = .value(80)
 
-        let rowItem4 = RowStringItem2(title: "test4")
-        let rowItem5 = RowStringItem2(title: "test5")
-        let rowItem6 = RowStringItem2(title: "test6")
+        let carItem = RowStringItem2(title: "Car")
+        let ferryItem = RowStringItem2(title: "Ferry")
+        let houseItem = RowStringItem2(title: "House")
         
-        let componentItem2 = ComponentItem<StringAdaptor>(rowItems: [rowItem4, rowItem5, rowItem6])
-        componentItem2.height = .auto
+        let stuffComponentItem = ComponentItem<StringAdaptor>(rowItems: [carItem, ferryItem, houseItem])
+        stuffComponentItem.height = .auto
 
         pickL.pickerView.showsSelectionIndicator = true
-        pickL.components = [componentItem1, componentItem2]
+        pickL.components = [colorsComponentItem, stuffComponentItem]
         pickL.selectedRowsHandler { rowIndex1, rowIndex2 in
             print("\(rowIndex1), \(rowIndex2)")
         }
@@ -45,6 +44,6 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        pickerView.frame = CGRect(x: 10, y: 10, width: 320, height: 320)
+        pickerView.frame = CGRect(x: 0, y: view.bounds.height - 320, width: view.bounds.width, height: 320)
     }
 }
