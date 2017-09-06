@@ -29,8 +29,7 @@ A bit of terminology - image below explains everything that you need to understa
 	**String representable.** There's an extension for `NSAttributedString` and `String` for convenient row item initializing:
 	
 	```swift
-	let rowItem1 = NSAttributedString(string: "Nikita", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red])
-	let rowItem2 = NSAttributedString(string: "Artem", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
+	let rowItem = NSAttributedString(string: "Nikita", attributes: [NSAttributedStringKey.foregroundColor: UIColor.red])
 
 	let rowItems: [RowStringItemProtocol] = ["Nikita", "Artem"]
 	```
@@ -38,8 +37,9 @@ A bit of terminology - image below explains everything that you need to understa
 	or a directly inheritance from `RowStringItemProtocol`:
 	
 	```swift
+	/// In this case you have a `didSelectHandler`.
 	let rowItem1 = RowStringItem(title: "Nikita")
-	let rowItem2 = RowStringItem(title: "Artem")
+	let rowItem2 = RowAttributedStringItem(attributedTitle: NSAttributedString(string: "Artem"))
 	```
 	
 	```swift
@@ -99,7 +99,7 @@ Component items provides a plenty of selection approaches:
 
  User has a few ways for detecting a row selection:
 
-* Each row item has a callback with passed **row index** and **component index** - useful when you want to monitor a selection for some specific item:
+* Each row item that is inherited from `RowStringItem`, `RowAttributedStringItem` or directly from `RowItem` has a callback with passed **row index** and **component index** - useful when you want to monitor a selection for some specific item:
 
 	```swift
 	rowItem.didSelectHandler = { rowIndex, componentIndex in

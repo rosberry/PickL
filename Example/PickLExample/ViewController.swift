@@ -21,14 +21,15 @@ class ViewController: UIViewController {
         let blackRowItem = NSAttributedString(string: "Black", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black])
         let greenRowItem = NSAttributedString(string: "Green", attributes: [NSAttributedStringKey.foregroundColor: UIColor.green])
 
+        let rowItem = RowAttributedStringItem(attributedTitle: NSAttributedString(string: "Artem"))
+        
         let colorsComponentItem = ComponentItem<StringAdaptor>(rowItems: [redRowItem, blackRowItem, greenRowItem])
         colorsComponentItem.width = .value(80)
 
         let carItem = RowStringItem2(title: "Car")
         let ferryItem = RowStringItem2(title: "Ferry")
-        let houseItem = RowStringItem2(title: "House")
-        
-        let stuffComponentItem = ComponentItem<StringAdaptor>(rowItems: [carItem, ferryItem, houseItem])
+
+        let stuffComponentItem = ComponentItem<StringAdaptor>(rowItems: [carItem, ferryItem, "House"])
         stuffComponentItem.height = .auto
 
         pickL.pickerView.showsSelectionIndicator = true
