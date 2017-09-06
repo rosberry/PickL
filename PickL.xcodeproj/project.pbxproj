@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8448D99A1F5972CD004033DE /* PickL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8448D9711F5971F4004033DE /* PickL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		848CED471F5FB2DE00E33424 /* PickLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */; };
 		84C830AF1F5FAD600086CE09 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C830AE1F5FAD600086CE09 /* ItemsFactory.swift */; };
 		84E945261F5EB98300DFDB0D /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448D94F1F596EB4004033DE /* PickL.framework */; };
 		84E945321F5EBC8E00DFDB0D /* SelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E945311F5EBC8E00DFDB0D /* SelectionTests.swift */; };
@@ -341,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848CED471F5FB2DE00E33424 /* PickLTests.swift in Sources */,
 				84E945321F5EBC8E00DFDB0D /* SelectionTests.swift in Sources */,
 				84C830AF1F5FAD600086CE09 /* ItemsFactory.swift in Sources */,
 			);

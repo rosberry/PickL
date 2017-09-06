@@ -31,7 +31,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
             return pickerView.showsSelectionIndicator
         }
         set {
-            pickerView.showsSelectionIndicator = showsSelectionIndicator
+            pickerView.showsSelectionIndicator = newValue
         }
     }
     

@@ -9,6 +9,10 @@
 import Foundation
 import PickL
 
+func makeStringComponentItem() -> ComponentItem<StringAdaptor> {
+    return ComponentItem<StringAdaptor>(rowItems: [])
+}
+
 func makeStringComponentItem(withRowItemsCount count: Int) -> ComponentItem<StringAdaptor> {
     let rowItems = Array(1...count).map { value -> RowStringItem in
         return RowStringItem(title: "title")
