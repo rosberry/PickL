@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8448D99A1F5972CD004033DE /* PickL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8448D9711F5971F4004033DE /* PickL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		848CED471F5FB2DE00E33424 /* PickLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */; };
+		848CED491F5FCE6700E33424 /* ComponentItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CED481F5FCE6700E33424 /* ComponentItemTests.swift */; };
 		84C830AF1F5FAD600086CE09 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C830AE1F5FAD600086CE09 /* ItemsFactory.swift */; };
 		84E945261F5EB98300DFDB0D /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448D94F1F596EB4004033DE /* PickL.framework */; };
 		84E945321F5EBC8E00DFDB0D /* SelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E945311F5EBC8E00DFDB0D /* SelectionTests.swift */; };
@@ -52,6 +53,7 @@
 		8448D9A41F597360004033DE /* RowStringItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowStringItemProtocol.swift; path = Sources/PickL/RowStringItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		8448D9A51F597360004033DE /* RowItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowItemProtocol.swift; path = Sources/PickL/RowItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		8448D9A61F597367004033DE /* RowStringItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowStringItem.swift; path = Sources/PickL/RowStringItem.swift; sourceTree = SOURCE_ROOT; };
+		848CED481F5FCE6700E33424 /* ComponentItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentItemTests.swift; sourceTree = "<group>"; };
 		84C830AE1F5FAD600086CE09 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
 		84E945211F5EB98300DFDB0D /* PickLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E9452E1F5EBA4D00DFDB0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */,
 				84E945311F5EBC8E00DFDB0D /* SelectionTests.swift */,
+				848CED481F5FCE6700E33424 /* ComponentItemTests.swift */,
 				84C830AD1F5FAD1F0086CE09 /* Helpers */,
 				84E9452D1F5EBA4D00DFDB0D /* Supporting Files */,
 			);
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848CED491F5FCE6700E33424 /* ComponentItemTests.swift in Sources */,
 				848CED471F5FB2DE00E33424 /* PickLTests.swift in Sources */,
 				84E945321F5EBC8E00DFDB0D /* SelectionTests.swift in Sources */,
 				84C830AF1F5FAD600086CE09 /* ItemsFactory.swift in Sources */,

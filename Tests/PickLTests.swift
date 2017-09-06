@@ -10,17 +10,7 @@ import XCTest
 import PickL
 
 class PickLTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
+
     func testShowsSelectionIndicator() {
         let pickerView = UIPickerView()
         let pickL = PickL<StringAdaptor>(pickerView: pickerView)
@@ -114,7 +104,10 @@ class PickLTests: XCTestCase {
         let pickL = PickL<StringAdaptor>(pickerView: pickerView)
         pickL.components = [component1, component2]
         
+        let component1Width = pickerView.delegate?.pickerView?(pickerView, widthForComponent: 0)
         let component2Width = pickerView.delegate?.pickerView?(pickerView, widthForComponent: 1)
+        
+        XCTAssertEqual(component1Width, 50)
         XCTAssertEqual(component2Width, 30)
     }
     
