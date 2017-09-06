@@ -2,16 +2,14 @@
 //  Copyright © 2017 Rosberry. All rights reserved.
 //
 
-import UIKit
-
-/// Convenient class for working with `String` representable row items. Handy when you need to implement a `didSelectHandler`.
+/// Convenient class for working with `String` representable row item wiw `didSelect` handler.
 ///
 /// - note: `String` already conforms to `RowStringItemProtocol`.
-open class RowStringItem {
+open class RowStringItem: RowItem {
     
     /// Title value for row item.
     public var title: String
-    
+
     public init(title: String) {
         self.title = title
     }

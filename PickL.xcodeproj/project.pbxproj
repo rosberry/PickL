@@ -11,6 +11,8 @@
 		8448D99A1F5972CD004033DE /* PickL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8448D9711F5971F4004033DE /* PickL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		848CED471F5FB2DE00E33424 /* PickLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */; };
 		848CED491F5FCE6700E33424 /* ComponentItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CED481F5FCE6700E33424 /* ComponentItemTests.swift */; };
+		84B9EADE1F5FF496003E68D8 /* RowAttributedStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9EADD1F5FF496003E68D8 /* RowAttributedStringItem.swift */; };
+		84B9EAE01F5FF596003E68D8 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9EADF1F5FF596003E68D8 /* RowItem.swift */; };
 		84E945261F5EB98300DFDB0D /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448D94F1F596EB4004033DE /* PickL.framework */; };
 		84E945321F5EBC8E00DFDB0D /* SelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E945311F5EBC8E00DFDB0D /* SelectionTests.swift */; };
 		84F9A5F91F59B4F700EA0DA3 /* Adaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448D99C1F597301004033DE /* Adaptor.swift */; };
@@ -55,6 +57,8 @@
 		8448D9A61F597367004033DE /* RowStringItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowStringItem.swift; path = Sources/PickL/RowStringItem.swift; sourceTree = SOURCE_ROOT; };
 		848CED481F5FCE6700E33424 /* ComponentItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentItemTests.swift; sourceTree = "<group>"; };
 		848CED4A1F5FE15900E33424 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
+		84B9EADD1F5FF496003E68D8 /* RowAttributedStringItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowAttributedStringItem.swift; path = Sources/PickL/RowAttributedStringItem.swift; sourceTree = SOURCE_ROOT; };
+		84B9EADF1F5FF596003E68D8 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowItem.swift; path = Sources/PickL/RowItem.swift; sourceTree = SOURCE_ROOT; };
 		84E945211F5EB98300DFDB0D /* PickLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E9452E1F5EBA4D00DFDB0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E9452F1F5EBA4D00DFDB0D /* PickLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLTests.swift; sourceTree = "<group>"; };
@@ -171,7 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				8448D9951F59726B004033DE /* Protocols */,
+				84B9EADF1F5FF596003E68D8 /* RowItem.swift */,
 				8448D9A61F597367004033DE /* RowStringItem.swift */,
+				84B9EADD1F5FF496003E68D8 /* RowAttributedStringItem.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F9A5FD1F59B50800EA0DA3 /* ComponentItem.swift in Sources */,
+				84B9EAE01F5FF596003E68D8 /* RowItem.swift in Sources */,
 				84F9A6041F59B51B00EA0DA3 /* PickL.swift in Sources */,
 				84F9A5FF1F59B50C00EA0DA3 /* UIView+RowItem.swift in Sources */,
 				84F9A6031F59B51300EA0DA3 /* RowViewItemProtocol.swift in Sources */,
@@ -344,6 +351,7 @@
 				84F9A6021F59B51300EA0DA3 /* RowStringItemProtocol.swift in Sources */,
 				84F9A5FE1F59B50C00EA0DA3 /* Foundation+RowItem.swift in Sources */,
 				84F9A6001F59B51000EA0DA3 /* RowStringItem.swift in Sources */,
+				84B9EADE1F5FF496003E68D8 /* RowAttributedStringItem.swift in Sources */,
 				84F9A5FC1F59B4FC00EA0DA3 /* ClosureWrapper.swift in Sources */,
 				84F9A5FA1F59B4F700EA0DA3 /* StringAdaptor.swift in Sources */,
 				84F9A5F91F59B4F700EA0DA3 /* Adaptor.swift in Sources */,

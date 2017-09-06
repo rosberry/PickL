@@ -147,7 +147,7 @@ class PickLTests: XCTestCase {
         XCTAssertNil(attrTitle2)
     }
     
-    func testAttributedTitleForRowPickerViewDelegateMethod() {
+    func testNSAttributedStringTitleForRowPickerViewDelegateMethod() {
         let rowItem1 = NSAttributedString(string: "1")
         let rowItem2 = NSAttributedString(string: "2")
         let component = ComponentItem<StringAdaptor>(rowItems: [rowItem1, rowItem2])
@@ -161,6 +161,28 @@ class PickLTests: XCTestCase {
         
         let attrTitle2 = pickerView.delegate?.pickerView?(pickerView, attributedTitleForRow: 1, forComponent: 0)
         XCTAssertEqual(attrTitle2, rowItem2)
+        
+        let title1 = pickerView.delegate?.pickerView?(pickerView, titleForRow: 0, forComponent: 0)
+        XCTAssertNil(title1)
+        
+        let title2 = pickerView.delegate?.pickerView?(pickerView, titleForRow: 1, forComponent: 0)
+        XCTAssertNil(title2)
+    }
+    
+    func testRowAttributedStringItemTitleForRowPickerViewDelegateMethod() {
+        let rowItem1 = RowAttributedStringItem(attributedTitle: NSAttributedString(string: "1"))
+        let rowItem2 = RowAttributedStringItem(attributedTitle: NSAttributedString(string: "2"))
+        let component = ComponentItem<StringAdaptor>(rowItems: [rowItem1, rowItem2])
+        
+        let pickerView = UIPickerView()
+        let pickL = PickL<StringAdaptor>(pickerView: pickerView)
+        pickL.components = [component]
+        
+        let attrTitle1 = pickerView.delegate?.pickerView?(pickerView, attributedTitleForRow: 0, forComponent: 0)
+        XCTAssertEqual(attrTitle1, rowItem1.attributedTitle)
+        
+        let attrTitle2 = pickerView.delegate?.pickerView?(pickerView, attributedTitleForRow: 1, forComponent: 0)
+        XCTAssertEqual(attrTitle2, rowItem2.attributedTitle)
         
         let title1 = pickerView.delegate?.pickerView?(pickerView, titleForRow: 0, forComponent: 0)
         XCTAssertNil(title1)

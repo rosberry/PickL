@@ -7,10 +7,10 @@ import PickL
 
 class SelectionTests: XCTestCase {
 
-    func testRowItem_didSelectHandler() {
+    func testRowStringItem_didSelectHandler() {
         let pickerView = UIPickerView()
         let rowItem1 = RowStringItem(title: "item1")
-        var rowItem2 = RowStringItem(title: "item2")
+        let rowItem2 = RowStringItem(title: "item2")
         
         var isHandlerCalled = false
         rowItem2.didSelectHandler = { rowIndex, componentIndex in
@@ -20,6 +20,27 @@ class SelectionTests: XCTestCase {
             XCTAssertEqual(componentIndex, 0)
         }
 
+        let componentItem = ComponentItem<StringAdaptor>(rowItems: [rowItem1, rowItem2])
+        let pickL = PickL<StringAdaptor>(pickerView: pickerView)
+        pickL.components = [componentItem]
+        
+        pickerView.delegate?.pickerView?(pickerView, didSelectRow: 1, inComponent: 0)
+        XCTAssertTrue(isHandlerCalled)
+    }
+    
+    func testRowAttributedStringItem_didSelectHandler() {
+        let pickerView = UIPickerView()
+        let rowItem1 = RowAttributedStringItem(attributedTitle: NSAttributedString(string: "item1"))
+        let rowItem2 = RowAttributedStringItem(attributedTitle: NSAttributedString(string: "item2"))
+        
+        var isHandlerCalled = false
+        rowItem2.didSelectHandler = { rowIndex, componentIndex in
+            isHandlerCalled = true
+            
+            XCTAssertEqual(rowIndex, 1)
+            XCTAssertEqual(componentIndex, 0)
+        }
+        
         let componentItem = ComponentItem<StringAdaptor>(rowItems: [rowItem1, rowItem2])
         let pickL = PickL<StringAdaptor>(pickerView: pickerView)
         pickL.components = [componentItem]

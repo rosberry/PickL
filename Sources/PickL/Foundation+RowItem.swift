@@ -21,7 +21,6 @@ extension NSAttributedString: RowStringItemProtocol {
 /// ```
 ///  let componentItem = ComponentItem<StringAdaptor>(rowItems: ["item1", "item2"])
 /// ```
-/// - note: Due to some swift struct's features, `itemDidSelectHandler` doesn't work in this case.
 extension String: RowStringItemProtocol {
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
