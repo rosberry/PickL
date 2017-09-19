@@ -161,7 +161,7 @@ pod 'PickL'
 ```
 #### Manually
 
-Drag `Sources` folder from [last release](https://github.com/rosberry/TableViewTools/releases) into your project.
+Drag `Sources` folder from [last release](https://github.com/rosberry/PickL/releases) into your project.
 
 ## Authors 
 
