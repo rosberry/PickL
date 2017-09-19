@@ -71,6 +71,31 @@ class SelectionTests: XCTestCase {
         XCTAssertTrue(isHandlerCalled)
     }
     
+    func testPickL_selectedRowsArrayHandler() {
+        let pickerView = UIPickerView()
+        let componentItem1 = makeStringComponentItem(withRowItemsCount: 2)
+        let componentItem2 = makeStringComponentItem(withRowItemsCount: 3)
+        let componentItem3 = makeStringComponentItem(withRowItemsCount: 4)
+        
+        let pickL = PickL<StringAdaptor>(pickerView: pickerView)
+        pickL.components = [componentItem1, componentItem2, componentItem3]
+        
+        pickerView.delegate?.pickerView?(pickerView, didSelectRow: 1, inComponent: 0)
+        pickerView.delegate?.pickerView?(pickerView, didSelectRow: 2, inComponent: 1)
+        pickerView.delegate?.pickerView?(pickerView, didSelectRow: 3, inComponent: 2)
+        
+        var isHandlerCalled = false
+        pickL.selectedRowsArrayHandler { indexes in
+            isHandlerCalled = true
+            XCTAssertEqual(indexes, [1, 2, 3])
+        }
+        
+        pickerView.delegate?.pickerView?(pickerView, didSelectRow: 3, inComponent: 2)
+        
+        XCTAssertTrue(isHandlerCalled)
+        XCTAssertEqual(pickL.selectedRows, [1, 2, 3])
+    }
+    
     func testPickL_selectedRowsHandler1() {
         let pickerView = UIPickerView()
         let componentItem = makeStringComponentItem(withRowItemsCount: 2)

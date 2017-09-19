@@ -134,6 +134,14 @@ Component items provides a plenty of selection approaches:
 	
 	### 🙋‍♂️ Note: This callback has up to 7 passed parameters (row indexes).
 	
+	**Even if you have more than 7 component items, there is a general solution:**
+	
+	```swift
+	pickL.selectedRowsArrayHandler { selectedRows in
+        print(selectedRows)
+    }
+	```
+	
 ## Authors 
 
 * [Nikita Ermolenko](https://github.com/Otbivnoe), nikita.ermolenko@rosberry.com

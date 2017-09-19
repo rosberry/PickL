@@ -34,8 +34,12 @@ class ViewController: UIViewController {
 
         pickL.pickerView.showsSelectionIndicator = true
         pickL.components = [colorsComponentItem, stuffComponentItem]
-        pickL.selectedRowsHandler { rowIndex1, rowIndex2 in
-            print("\(rowIndex1), \(rowIndex2)")
+//        pickL.selectedRowsHandler { rowIndex1, rowIndex2 in
+//            print("\(rowIndex1), \(rowIndex2)")
+//        }
+
+        pickL.selectedRowsArrayHandler { selectedRows in
+            print(selectedRows)
         }
     }
     
