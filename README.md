@@ -141,7 +141,28 @@ Component items provides a plenty of selection approaches:
         print(selectedRows)
     }
 	```
-	
+
+## Installation
+
+#### Carthage
+Create a `Cartfile` that lists the framework and run `carthage update`. Follow the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the framework to your project.
+
+```
+github "rosberry/PickL"
+```
+
+#### CocoaPods
+You can use [CocoaPods](http://cocoapods.org/) to install `PickL` by adding it to your `Podfile`:
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+pod 'PickL'
+```
+#### Manually
+
+Drag `Sources` folder from [last release](https://github.com/rosberry/TableViewTools/releases) into your project.
+
 ## Authors 
 
 * [Nikita Ermolenko](https://github.com/Otbivnoe), nikita.ermolenko@rosberry.com
