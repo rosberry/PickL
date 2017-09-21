@@ -2,6 +2,8 @@
 
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
 [![Swift Version](https://img.shields.io/badge/swift-4.0-orange.svg)](https://swift.org/)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Version](https://img.shields.io/cocoapods/v/PickL.svg?style=flat)](http://cocoadocs.org/docsets/PickL)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 **PickL** is an elegant manager for deal with `UIPickerView`. You don't have to implement a logic for `UIPickerViewDataSource` and `UIPickerViewDelegate` by yourself anymore, it's already done under the hood.
