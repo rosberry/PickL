@@ -6,7 +6,7 @@
 [![Version](https://img.shields.io/cocoapods/v/PickL.svg?style=flat)](http://cocoadocs.org/docsets/PickL)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-**PickL** is an уlegant manager to easily deal with `UIPickerView`. You don't have to implement a logic for `UIPickerViewDataSource` and `UIPickerViewDelegate` by yourself anymore, it's already done under the hood.
+**PickL** is an elegant manager to easily deal with `UIPickerView`. You don't have to implement a logic for `UIPickerViewDataSource` and `UIPickerViewDelegate` by yourself anymore, it's already done under the hood.
 
 
 ## Usage 🚀
