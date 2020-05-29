@@ -1,7 +1,7 @@
 # PickL
 
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
-[![Swift Version](https://img.shields.io/badge/swift-4.0-orange.svg)](https://swift.org/)
+[![Swift Version](https://img.shields.io/badge/swift-5.0-orange.svg)](https://swift.org/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/PickL.svg?style=flat)](http://cocoadocs.org/docsets/PickL)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
@@ -35,7 +35,7 @@ A bit of terminology - image below explains everything that you need to understa
 
 	let rowItems: [RowStringItemProtocol] = ["Nikita", "Artem"]
 	```
-		
+	
 	or a directly inheritance from `RowStringItemProtocol`:
 	
 	```swift
@@ -85,7 +85,7 @@ A bit of terminology - image below explains everything that you need to understa
 	```swift
 	let pickL = PickL<StringAdaptor>(pickerView: pickerView)
 	pickL.components = [componentItem]
-	```    
+	```
 	
 ### A bit more about component item.
 
@@ -126,7 +126,7 @@ Component items provides a plenty of selection approaches:
 	pickL.selectedRowsHandler { rowIndex1, rowIndex2, ... in
 		print("\(rowIndex1), \(rowIndex2)")
 	}
-	```	
+	```
 	
 	or use an array of all selected rows:
 	
@@ -157,7 +157,7 @@ github "rosberry/PickL"
 You can use [CocoaPods](http://cocoapods.org/) to install `PickL` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios, '8.0'
+platform :ios, '12.0'
 use_frameworks!
 pod 'PickL'
 ```
