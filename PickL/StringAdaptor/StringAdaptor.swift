@@ -11,11 +11,11 @@ public final class StringAdaptor: BaseAdaptor, SpecificAdaptor {
 
     // MARK: - UIPickerViewDelegate
 
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return delegate.pickerView(pickerView, titleForRow: row, forComponent: component)
     }
 
-    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return delegate.pickerView(pickerView, attributedTitleForRow: row, forComponent: component)
     }
 }

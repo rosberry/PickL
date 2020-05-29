@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063F3E9A2480F44C00C50422 /* PickL+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F3E992480F44C00C50422 /* PickL+Selection.swift */; };
 		06B4F5CF2480AEF70010445D /* ComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C12480AEF60010445D /* ComponentItem.swift */; };
 		06B4F5D02480AEF70010445D /* RowStringItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C22480AEF60010445D /* RowStringItemProtocol.swift */; };
 		06B4F5D12480AEF70010445D /* RowAttributedStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		063F3E992480F44C00C50422 /* PickL+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickL+Selection.swift"; sourceTree = SOURCE_ROOT; };
 		06B4F5C12480AEF60010445D /* ComponentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentItem.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C22480AEF60010445D /* RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowStringItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowAttributedStringItem.swift; sourceTree = SOURCE_ROOT; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				06B4F5C42480AEF60010445D /* PickL.swift */,
+				063F3E992480F44C00C50422 /* PickL+Selection.swift */,
 				06B4F6322480B5E60010445D /* StringAdaptor */,
 				06B4F6312480B5DC0010445D /* ViewAdaptor */,
 				06B4F5C72480AEF70010445D /* BaseAdaptor.swift */,
@@ -255,6 +258,7 @@
 				06B4F5D42480AEF70010445D /* StringAdaptor.swift in Sources */,
 				06B4F5D12480AEF70010445D /* RowAttributedStringItem.swift in Sources */,
 				06B4F5D82480AEF70010445D /* RowViewItemProtocol.swift in Sources */,
+				063F3E9A2480F44C00C50422 /* PickL+Selection.swift in Sources */,
 				06B4F5D32480AEF70010445D /* String+RowStringItemProtocol.swift in Sources */,
 				06B4F5D72480AEF70010445D /* ViewAdaptor.swift in Sources */,
 				06B4F5DB2480AEF70010445D /* RowItem.swift in Sources */,

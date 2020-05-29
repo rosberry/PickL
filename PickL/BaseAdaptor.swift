@@ -9,15 +9,18 @@ public protocol SpecificAdaptor: class {
 }
 
 /// Base adaptor for working with string/view representable row items.
-public class BaseAdaptor: NSObject, UIPickerViewDelegate {
+public class BaseAdaptor: NSObject {
 
     unowned var delegate: PickLDelegate
 
-    required public init(delegate: PickLDelegate) {
+    required init(delegate: PickLDelegate) {
         self.delegate = delegate
     }
+}
 
-    // MARK: - UIPickerViewDelegate
+// MARK: - UIPickerViewDelegate
+
+extension BaseAdaptor: UIPickerViewDelegate {
 
     public func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return delegate.pickerView(pickerView, widthForComponent: component)
