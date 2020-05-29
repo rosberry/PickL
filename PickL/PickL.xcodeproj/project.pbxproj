@@ -11,13 +11,13 @@
 		06B4F5D02480AEF70010445D /* RowStringItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C22480AEF60010445D /* RowStringItemProtocol.swift */; };
 		06B4F5D12480AEF70010445D /* RowAttributedStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */; };
 		06B4F5D22480AEF70010445D /* PickL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C42480AEF60010445D /* PickL.swift */; };
-		06B4F5D32480AEF70010445D /* Foundation+RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C52480AEF60010445D /* Foundation+RowItem.swift */; };
+		06B4F5D32480AEF70010445D /* String+RowStringItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */; };
 		06B4F5D42480AEF70010445D /* StringAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C62480AEF60010445D /* StringAdaptor.swift */; };
 		06B4F5D52480AEF70010445D /* Adaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C72480AEF70010445D /* Adaptor.swift */; };
 		06B4F5D62480AEF70010445D /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C82480AEF70010445D /* ClosureWrapper.swift */; };
 		06B4F5D72480AEF70010445D /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C92480AEF70010445D /* ViewAdaptor.swift */; };
 		06B4F5D82480AEF70010445D /* RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CA2480AEF70010445D /* RowViewItemProtocol.swift */; };
-		06B4F5D92480AEF70010445D /* UIView+RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CB2480AEF70010445D /* UIView+RowItem.swift */; };
+		06B4F5D92480AEF70010445D /* UIView+RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CB2480AEF70010445D /* UIView+RowViewItemProtocol.swift */; };
 		06B4F5DA2480AEF70010445D /* RowItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CC2480AEF70010445D /* RowItemProtocol.swift */; };
 		06B4F5DB2480AEF70010445D /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CD2480AEF70010445D /* RowItem.swift */; };
 		06B4F5DC2480AEF70010445D /* RowStringItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CE2480AEF70010445D /* RowStringItem.swift */; };
@@ -33,13 +33,13 @@
 		06B4F5C22480AEF60010445D /* RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowStringItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowAttributedStringItem.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C42480AEF60010445D /* PickL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickL.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5C52480AEF60010445D /* Foundation+RowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+RowItem.swift"; sourceTree = SOURCE_ROOT; };
-		06B4F5C62480AEF60010445D /* StringAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAdaptor.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+RowStringItemProtocol.swift"; path = "ViewAdaptor/String+RowStringItemProtocol.swift"; sourceTree = SOURCE_ROOT; };
+		06B4F5C62480AEF60010445D /* StringAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringAdaptor.swift; path = ViewAdaptor/StringAdaptor.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C72480AEF70010445D /* Adaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptor.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C82480AEF70010445D /* ClosureWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureWrapper.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5C92480AEF70010445D /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdaptor.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5C92480AEF70010445D /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewAdaptor.swift; path = ViewAdaptor/ViewAdaptor.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5CA2480AEF70010445D /* RowViewItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowViewItemProtocol.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5CB2480AEF70010445D /* UIView+RowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RowItem.swift"; sourceTree = SOURCE_ROOT; };
+		06B4F5CB2480AEF70010445D /* UIView+RowViewItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+RowViewItemProtocol.swift"; path = "ViewAdaptor/UIView+RowViewItemProtocol.swift"; sourceTree = SOURCE_ROOT; };
 		06B4F5CC2480AEF70010445D /* RowItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5CD2480AEF70010445D /* RowItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5CE2480AEF70010445D /* RowStringItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowStringItem.swift; sourceTree = SOURCE_ROOT; };
@@ -56,6 +56,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		06B4F6312480B5DC0010445D /* ViewAdaptor */ = {
+			isa = PBXGroup;
+			children = (
+				06B4F5C62480AEF60010445D /* StringAdaptor.swift */,
+				06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */,
+				06B4F5C92480AEF70010445D /* ViewAdaptor.swift */,
+				06B4F5CB2480AEF70010445D /* UIView+RowViewItemProtocol.swift */,
+			);
+			path = ViewAdaptor;
+			sourceTree = "<group>";
+		};
+		06B4F6322480B5E60010445D /* StringAdaptor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StringAdaptor;
+			sourceTree = "<group>";
+		};
 		90361A35CD1424A4CF69E141 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,20 +116,18 @@
 		EE4C714DC7D57EA7ABC3554E /* PickL */ = {
 			isa = PBXGroup;
 			children = (
+				06B4F5C42480AEF60010445D /* PickL.swift */,
+				06B4F6322480B5E60010445D /* StringAdaptor */,
+				06B4F6312480B5DC0010445D /* ViewAdaptor */,
 				06B4F5C72480AEF70010445D /* Adaptor.swift */,
 				06B4F5C82480AEF70010445D /* ClosureWrapper.swift */,
 				06B4F5C12480AEF60010445D /* ComponentItem.swift */,
-				06B4F5C52480AEF60010445D /* Foundation+RowItem.swift */,
-				06B4F5C42480AEF60010445D /* PickL.swift */,
 				06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */,
 				06B4F5CD2480AEF70010445D /* RowItem.swift */,
 				06B4F5CC2480AEF70010445D /* RowItemProtocol.swift */,
 				06B4F5CE2480AEF70010445D /* RowStringItem.swift */,
 				06B4F5C22480AEF60010445D /* RowStringItemProtocol.swift */,
 				06B4F5CA2480AEF70010445D /* RowViewItemProtocol.swift */,
-				06B4F5C62480AEF60010445D /* StringAdaptor.swift */,
-				06B4F5CB2480AEF70010445D /* UIView+RowItem.swift */,
-				06B4F5C92480AEF70010445D /* ViewAdaptor.swift */,
 				3A6E1AEB408264E3DDE61D2A /* .swiftlint.yml */,
 				90361A35CD1424A4CF69E141 /* Tests */,
 			);
@@ -176,6 +192,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B9D23BE2F4FB53F8EE796678;
 			projectDirPath = "";
@@ -238,12 +255,12 @@
 				06B4F5D42480AEF70010445D /* StringAdaptor.swift in Sources */,
 				06B4F5D12480AEF70010445D /* RowAttributedStringItem.swift in Sources */,
 				06B4F5D82480AEF70010445D /* RowViewItemProtocol.swift in Sources */,
-				06B4F5D32480AEF70010445D /* Foundation+RowItem.swift in Sources */,
+				06B4F5D32480AEF70010445D /* String+RowStringItemProtocol.swift in Sources */,
 				06B4F5D72480AEF70010445D /* ViewAdaptor.swift in Sources */,
 				06B4F5DB2480AEF70010445D /* RowItem.swift in Sources */,
 				06B4F5DA2480AEF70010445D /* RowItemProtocol.swift in Sources */,
 				06B4F5D22480AEF70010445D /* PickL.swift in Sources */,
-				06B4F5D92480AEF70010445D /* UIView+RowItem.swift in Sources */,
+				06B4F5D92480AEF70010445D /* UIView+RowViewItemProtocol.swift in Sources */,
 				06B4F5D02480AEF70010445D /* RowStringItemProtocol.swift in Sources */,
 				06B4F5D62480AEF70010445D /* ClosureWrapper.swift in Sources */,
 				06B4F5D52480AEF70010445D /* Adaptor.swift in Sources */,

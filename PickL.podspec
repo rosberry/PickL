@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "Rosberry" => "develop@rosberry.com" }
 
   spec.swift_version = "5.0"
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = "12.0"
 
   spec.source       = { :git => "https://github.com/rosberry/PickL.git", :tag => "#{spec.version}" }
 

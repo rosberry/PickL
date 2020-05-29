@@ -11,6 +11,7 @@
 		063FCBCA2271E574001C8962 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FCBC92271E574001C8962 /* ViewController.swift */; };
 		063FCBCF2271E575001C8962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063FCBCE2271E575001C8962 /* Assets.xcassets */; };
 		063FCBD22271E575001C8962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063FCBD02271E575001C8962 /* LaunchScreen.storyboard */; };
+		068A15BB2480B8C50096BACD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068A15BA2480B8C50096BACD /* Color.swift */; };
 		06B4F5F62480B1970010445D /* PickL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B4F5F52480B1970010445D /* PickL.framework */; };
 		06B4F5F72480B1970010445D /* PickL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06B4F5F52480B1970010445D /* PickL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		063FCBCE2271E575001C8962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		063FCBD12271E575001C8962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		063FCBD32271E575001C8962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		068A15BA2480B8C50096BACD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		06B4F5F52480B1970010445D /* PickL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PickL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 			children = (
 				063FCBC72271E574001C8962 /* AppDelegate.swift */,
 				063FCBC92271E574001C8962 /* ViewController.swift */,
+				068A15BA2480B8C50096BACD /* Color.swift */,
 				063FCBCE2271E575001C8962 /* Assets.xcassets */,
 				063FCBD02271E575001C8962 /* LaunchScreen.storyboard */,
 				063FCBD32271E575001C8962 /* Info.plist */,
@@ -161,6 +164,7 @@
 			files = (
 				063FCBCA2271E574001C8962 /* ViewController.swift in Sources */,
 				063FCBC82271E574001C8962 /* AppDelegate.swift in Sources */,
+				068A15BB2480B8C50096BACD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

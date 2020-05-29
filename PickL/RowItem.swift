@@ -6,6 +6,8 @@ import UIKit
 
 open class RowItem {
 
+    public typealias SelectionHandler = ((_ rowIndex: RowIndex, _ componentIndex: ComponentIndex) -> Void)
+
     /// The handler for detecting row selection.
     public var didSelectHandler: SelectionHandler?
 }

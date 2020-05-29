@@ -5,12 +5,31 @@
 import UIKit
 import PickL
 
-class RowStringItem2: RowStringItem {}
+final class RowStringItem2: RowStringItem {}
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    let pickerView = UIPickerView()
-    lazy var pickL = PickL<StringAdaptor>(pickerView: self.pickerView)
+    private lazy var pickL: PickL<StringAdaptor> = {
+        let pickL = PickL<StringAdaptor>(pickerView: pickerView)
+        pickL.selectedRowsHandler { [weak self] colorIndex, stuffIndex in
+            guard let self = self else {
+                return
+            }
+            print(self.colors[colorIndex], self.stuff[stuffIndex])
+        }
+        return pickL
+    }()
+
+    private lazy var colors: [Color] = [.init(name: "Red", color: .red),
+                                .init(name: "Black", color: .black),
+                                .init(name: "Green", color: .green)]
+    private lazy var stuff: [String] = ["Car", "Ferry", "House"]
+
+    // MARK: - Subviews
+
+    private lazy var pickerView: UIPickerView = .init()
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,29 +37,27 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(pickerView)
 
-        let redRowItem = NSAttributedString(string: "Red", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-        let blackRowItem = NSAttributedString(string: "Black", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        let greenRowItem = NSAttributedString(string: "Green", attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
-
-        let colorsComponentItem = ComponentItem<StringAdaptor>(rowItems: [redRowItem, blackRowItem, greenRowItem])
-        colorsComponentItem.width = .value(80)
-
-        let carItem = RowStringItem2(title: "Car")
-        let ferryItem = RowStringItem2(title: "Ferry")
-
-        let stuffComponentItem = ComponentItem<StringAdaptor>(rowItems: [carItem, ferryItem, "House"])
-        stuffComponentItem.height = .auto
-
         pickL.pickerView.showsSelectionIndicator = true
-        pickL.components = [colorsComponentItem, stuffComponentItem]
-
-        pickL.selectedRowsArrayHandler { selectedRows in
-            print(selectedRows)
-        }
+        pickL.components = makeComponentItems()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         pickerView.center = view.center
+    }
+
+    // MARK: - Private
+
+    private func makeComponentItems() -> [ComponentItem<StringAdaptor>] {
+        let attributedStrings = colors.map { color in
+            NSAttributedString(string: color.name, attributes: [.foregroundColor: color.color])
+        }
+
+        let colorsComponentItem = ComponentItem<StringAdaptor>(rowItems: attributedStrings)
+        colorsComponentItem.width = .value(80)
+
+        let stuffComponentItem = ComponentItem<StringAdaptor>(rowItems: stuff.map(RowStringItem2.init))
+
+        return [colorsComponentItem, stuffComponentItem]
     }
 }
