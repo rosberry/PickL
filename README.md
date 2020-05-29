@@ -22,7 +22,7 @@ Due to some `UIPickerView` restrictions, you can't work with ***view*** and ***s
 ### Component items / row items
 A bit of terminology - image below explains everything that you need to understand the future explanations. 
 
-![](assets/calendar.png)
+![](.github/calendar.png)
 
 **🔬 Let's dive in:**
 

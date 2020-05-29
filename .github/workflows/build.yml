@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:    
+      - master
+name: Build
+jobs:
+  test:
+    name: Build
+    runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=13.3,name=iPhone 11']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build and Test
+        run: |
+          cd PickL
+          xcodebuild clean build test -project PickL.xcodeproj -scheme PickL -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
+      - name: Update Code Coverage
+        run: |
+          bash <(curl -s https://codecov.io/bash) -J 'PickL'
+      - name: Update docs
+        run: |
+          gem install jazzy
+          jazzy
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Update docs" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
