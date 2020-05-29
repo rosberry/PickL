@@ -9,7 +9,7 @@ public protocol SpecificAdaptor: class {
 }
 
 /// Base adaptor for working with string/view representable row items.
-public class Adaptor: NSObject, UIPickerViewDelegate {
+public class BaseAdaptor: NSObject, UIPickerViewDelegate {
 
     unowned var delegate: PickLDelegate
 

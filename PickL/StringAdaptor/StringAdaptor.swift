@@ -5,7 +5,7 @@
 import UIKit
 
 /// Special adaptor for working with string representable row items: `String`, `NSAttributedString`.
-public final class StringAdaptor: Adaptor, SpecificAdaptor {
+public final class StringAdaptor: BaseAdaptor, SpecificAdaptor {
 
     public typealias RowItemType = RowStringItemProtocol
 

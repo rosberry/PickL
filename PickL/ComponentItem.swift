@@ -21,9 +21,9 @@ public enum Size {
 ///  ComponentItem<ViewAdaptor>(rowItems: [rowItem])
 /// ```
 ///
-final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
+final public class ComponentItem<Adaptor> where Adaptor: BaseAdaptor & SpecificAdaptor {
 
-    public typealias RowType = A.RowItemType
+    public typealias RowType = Adaptor.RowItemType
 
     /// Convenient typealias for `didSelectRowHandler`.
     ///
@@ -31,7 +31,7 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     ///   - componentItem: The component item.
     ///   - rowIndex: The selected row index.
     ///   - rowItem: The selected row item.
-    public typealias SelectedRowHandler = (_ componentItem: ComponentItem<A>, _ rowIndex: RowIndex, _ rowItem: RowType) -> Void
+    public typealias SelectedRowHandler = (_ componentItem: ComponentItem<Adaptor>, _ rowIndex: RowIndex, _ rowItem: RowType) -> Void
 
     /// The width of component. `Size.auto` - by default.
     public var width: Size = .auto
@@ -43,7 +43,7 @@ final public class ComponentItem<A> where A: Adaptor, A: SpecificAdaptor {
     public var rowItems: [RowType]
 
     /// The weak reference to `PickL` object.
-    public weak var pickL: PickL<A>?
+    public weak var pickL: PickL<Adaptor>?
 
     /// The weak reference to `UIPickerView`.
     public weak var pickerView: UIPickerView?

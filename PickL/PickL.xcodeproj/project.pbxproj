@@ -13,7 +13,7 @@
 		06B4F5D22480AEF70010445D /* PickL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C42480AEF60010445D /* PickL.swift */; };
 		06B4F5D32480AEF70010445D /* String+RowStringItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */; };
 		06B4F5D42480AEF70010445D /* StringAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C62480AEF60010445D /* StringAdaptor.swift */; };
-		06B4F5D52480AEF70010445D /* Adaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C72480AEF70010445D /* Adaptor.swift */; };
+		06B4F5D52480AEF70010445D /* BaseAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C72480AEF70010445D /* BaseAdaptor.swift */; };
 		06B4F5D62480AEF70010445D /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C82480AEF70010445D /* ClosureWrapper.swift */; };
 		06B4F5D72480AEF70010445D /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5C92480AEF70010445D /* ViewAdaptor.swift */; };
 		06B4F5D82480AEF70010445D /* RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5CA2480AEF70010445D /* RowViewItemProtocol.swift */; };
@@ -33,9 +33,9 @@
 		06B4F5C22480AEF60010445D /* RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowStringItemProtocol.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowAttributedStringItem.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C42480AEF60010445D /* PickL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickL.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+RowStringItemProtocol.swift"; path = "ViewAdaptor/String+RowStringItemProtocol.swift"; sourceTree = SOURCE_ROOT; };
-		06B4F5C62480AEF60010445D /* StringAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringAdaptor.swift; path = ViewAdaptor/StringAdaptor.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5C72480AEF70010445D /* Adaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptor.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+RowStringItemProtocol.swift"; path = "StringAdaptor/String+RowStringItemProtocol.swift"; sourceTree = SOURCE_ROOT; };
+		06B4F5C62480AEF60010445D /* StringAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringAdaptor.swift; path = StringAdaptor/StringAdaptor.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5C72480AEF70010445D /* BaseAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAdaptor.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C82480AEF70010445D /* ClosureWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureWrapper.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5C92480AEF70010445D /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewAdaptor.swift; path = ViewAdaptor/ViewAdaptor.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5CA2480AEF70010445D /* RowViewItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowViewItemProtocol.swift; sourceTree = SOURCE_ROOT; };
@@ -59,8 +59,6 @@
 		06B4F6312480B5DC0010445D /* ViewAdaptor */ = {
 			isa = PBXGroup;
 			children = (
-				06B4F5C62480AEF60010445D /* StringAdaptor.swift */,
-				06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */,
 				06B4F5C92480AEF70010445D /* ViewAdaptor.swift */,
 				06B4F5CB2480AEF70010445D /* UIView+RowViewItemProtocol.swift */,
 			);
@@ -70,6 +68,8 @@
 		06B4F6322480B5E60010445D /* StringAdaptor */ = {
 			isa = PBXGroup;
 			children = (
+				06B4F5C62480AEF60010445D /* StringAdaptor.swift */,
+				06B4F5C52480AEF60010445D /* String+RowStringItemProtocol.swift */,
 			);
 			path = StringAdaptor;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 				06B4F5C42480AEF60010445D /* PickL.swift */,
 				06B4F6322480B5E60010445D /* StringAdaptor */,
 				06B4F6312480B5DC0010445D /* ViewAdaptor */,
-				06B4F5C72480AEF70010445D /* Adaptor.swift */,
+				06B4F5C72480AEF70010445D /* BaseAdaptor.swift */,
 				06B4F5C82480AEF70010445D /* ClosureWrapper.swift */,
 				06B4F5C12480AEF60010445D /* ComponentItem.swift */,
 				06B4F5C32480AEF60010445D /* RowAttributedStringItem.swift */,
@@ -263,7 +263,7 @@
 				06B4F5D92480AEF70010445D /* UIView+RowViewItemProtocol.swift in Sources */,
 				06B4F5D02480AEF70010445D /* RowStringItemProtocol.swift in Sources */,
 				06B4F5D62480AEF70010445D /* ClosureWrapper.swift in Sources */,
-				06B4F5D52480AEF70010445D /* Adaptor.swift in Sources */,
+				06B4F5D52480AEF70010445D /* BaseAdaptor.swift in Sources */,
 				06B4F5DC2480AEF70010445D /* RowStringItem.swift in Sources */,
 				06B4F5CF2480AEF70010445D /* ComponentItem.swift in Sources */,
 			);

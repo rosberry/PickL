@@ -5,7 +5,7 @@
 import UIKit
 
 /// Special adaptor for working with view representable row items.
-public final class ViewAdaptor: Adaptor, SpecificAdaptor {
+public final class ViewAdaptor: BaseAdaptor, SpecificAdaptor {
 
     public typealias RowItemType = RowViewItemProtocol
 

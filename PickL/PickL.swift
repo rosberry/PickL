@@ -18,12 +18,12 @@ public protocol PickLDelegate: class {
 public typealias RowIndex = Int
 public typealias ComponentIndex = Int
 
-open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Adaptor & SpecificAdaptor {
+open class PickL<Adaptor>: NSObject, UIPickerViewDataSource, PickLDelegate where Adaptor: BaseAdaptor & SpecificAdaptor {
 
     /// The reference to `UIPickerView`.
     public unowned let pickerView: UIPickerView
 
-    private lazy var adaptor = A(delegate: self)
+    private lazy var adaptor = Adaptor(delegate: self)
 
     /// A Boolean value that determines whether the selection indicator is displayed.
     public var showsSelectionIndicator: Bool {
@@ -41,7 +41,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
     private var selectedRowsHandler: (([RowIndex]) -> Void)?
 
     /// The array of component items with specific row items type.
-    public var components: [ComponentItem<A>] = [] {
+    public var components: [ComponentItem<Adaptor>] = [] {
         didSet {
             selectedRows = Array(repeating: 0, count: components.count)
 
@@ -64,7 +64,7 @@ open class PickL<A>: NSObject, UIPickerViewDataSource, PickLDelegate where A: Ad
     }
 
     /// Subscript that returns the row item with specified column and row.
-    open subscript(component: Int, row: Int) -> A.RowItemType {
+    open subscript(component: Int, row: Int) -> Adaptor.RowItemType {
         assert(component >= 0, "Component index can not be negative.")
         assert(row >= 0, "Row index can not be negative.")
         assert(component < components.count, "Component index(\(component)) out of component items count(\(components.count)) range.")
