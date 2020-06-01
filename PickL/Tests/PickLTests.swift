@@ -3,7 +3,7 @@
 //
 
 import XCTest
-import PickL
+@testable import PickL
 
 class PickLTests: XCTestCase {
 

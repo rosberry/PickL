@@ -36,7 +36,7 @@ open class PickL<Adaptor>: NSObject, UIPickerViewDataSource where Adaptor: BaseA
     }
 
     /// Current selected row indexes.
-    private(set) var selectedRows: [RowIndex] = []
+    public private(set) var selectedRows: [RowIndex] = []
 
     internal var selectedRowsHandler: (([RowIndex]) -> Void)?
 

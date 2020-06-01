@@ -49,6 +49,7 @@
 		06E450BB2484992E008E2A7C /* ClosureWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureWrapper.swift; sourceTree = "<group>"; };
 		06E450BD2484992E008E2A7C /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdaptor.swift; sourceTree = "<group>"; };
 		06E450BE2484992E008E2A7C /* UIView+RowViewItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RowViewItemProtocol.swift"; sourceTree = "<group>"; };
+		06E450E02484A20E008E2A7C /* PickL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickL.h; sourceTree = "<group>"; };
 		0C88936505B44D4FD00CA6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A6E1AEB408264E3DDE61D2A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		85B79BD63BAF0F5AF2A82F02 /* PickL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PickL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +105,7 @@
 				06E450AE2484992D008E2A7C /* StringAdaptor */,
 				06E450BC2484992E008E2A7C /* ViewAdaptor */,
 				86828D9E058C5085B7581CC3 /* Info.plist */,
+				06E450E02484A20E008E2A7C /* PickL.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
