@@ -11,6 +11,7 @@
 		06B4F5E22480AF0B0010445D /* ComponentItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5DE2480AF0B0010445D /* ComponentItemTests.swift */; };
 		06B4F5E32480AF0B0010445D /* SelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5DF2480AF0B0010445D /* SelectionTests.swift */; };
 		06B4F5E42480AF0B0010445D /* PickLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4F5E02480AF0B0010445D /* PickLTests.swift */; };
+		06BFC9192484A283008C0AA2 /* PickL.h in Headers */ = {isa = PBXBuildFile; fileRef = 06E450E02484A20E008E2A7C /* PickL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06E450BF2484992F008E2A7C /* StringAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450AF2484992D008E2A7C /* StringAdaptor.swift */; };
 		06E450C02484992F008E2A7C /* String+RowStringItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450B02484992D008E2A7C /* String+RowStringItemProtocol.swift */; };
 		06E450C12484992F008E2A7C /* BaseAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450B12484992D008E2A7C /* BaseAdaptor.swift */; };
@@ -26,14 +27,13 @@
 		06E450CB2484992F008E2A7C /* ClosureWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450BB2484992E008E2A7C /* ClosureWrapper.swift */; };
 		06E450CC2484992F008E2A7C /* ViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450BD2484992E008E2A7C /* ViewAdaptor.swift */; };
 		06E450CD2484992F008E2A7C /* UIView+RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450BE2484992E008E2A7C /* UIView+RowViewItemProtocol.swift */; };
-		697E5C8A9909350CACCFB751 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3A6E1AEB408264E3DDE61D2A /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06B4F5DD2480AF0B0010445D /* ItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsFactory.swift; path = Tests/ItemsFactory.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5DE2480AF0B0010445D /* ComponentItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentItemTests.swift; path = Tests/ComponentItemTests.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5DF2480AF0B0010445D /* SelectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionTests.swift; path = Tests/SelectionTests.swift; sourceTree = SOURCE_ROOT; };
-		06B4F5E02480AF0B0010445D /* PickLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickLTests.swift; path = Tests/PickLTests.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5DD2480AF0B0010445D /* ItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsFactory.swift; path = PickLTests/ItemsFactory.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5DE2480AF0B0010445D /* ComponentItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentItemTests.swift; path = PickLTests/ComponentItemTests.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5DF2480AF0B0010445D /* SelectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionTests.swift; path = PickLTests/SelectionTests.swift; sourceTree = SOURCE_ROOT; };
+		06B4F5E02480AF0B0010445D /* PickLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickLTests.swift; path = PickLTests/PickLTests.swift; sourceTree = SOURCE_ROOT; };
 		06E450AF2484992D008E2A7C /* StringAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAdaptor.swift; sourceTree = "<group>"; };
 		06E450B02484992D008E2A7C /* String+RowStringItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RowStringItemProtocol.swift"; sourceTree = "<group>"; };
 		06E450B12484992D008E2A7C /* BaseAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAdaptor.swift; sourceTree = "<group>"; };
@@ -50,14 +50,25 @@
 		06E450BD2484992E008E2A7C /* ViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAdaptor.swift; sourceTree = "<group>"; };
 		06E450BE2484992E008E2A7C /* UIView+RowViewItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RowViewItemProtocol.swift"; sourceTree = "<group>"; };
 		06E450E02484A20E008E2A7C /* PickL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickL.h; sourceTree = "<group>"; };
-		0C88936505B44D4FD00CA6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		3A6E1AEB408264E3DDE61D2A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0C88936505B44D4FD00CA6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = .././PickLTests/Info.plist; sourceTree = "<group>"; };
 		85B79BD63BAF0F5AF2A82F02 /* PickL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PickL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86828D9E058C5085B7581CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		96A78259EC2308F7574E1A7D /* PickLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		06BFC91A2484A4CF008C0AA2 /* PickLTests */ = {
+			isa = PBXGroup;
+			children = (
+				06B4F5DE2480AF0B0010445D /* ComponentItemTests.swift */,
+				06B4F5DD2480AF0B0010445D /* ItemsFactory.swift */,
+				06B4F5E02480AF0B0010445D /* PickLTests.swift */,
+				06B4F5DF2480AF0B0010445D /* SelectionTests.swift */,
+				0C88936505B44D4FD00CA6C7 /* Info.plist */,
+			);
+			path = PickLTests;
+			sourceTree = "<group>";
+		};
 		06E450AE2484992D008E2A7C /* StringAdaptor */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,18 +85,6 @@
 				06E450BE2484992E008E2A7C /* UIView+RowViewItemProtocol.swift */,
 			);
 			path = ViewAdaptor;
-			sourceTree = "<group>";
-		};
-		90361A35CD1424A4CF69E141 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				06B4F5DE2480AF0B0010445D /* ComponentItemTests.swift */,
-				06B4F5DD2480AF0B0010445D /* ItemsFactory.swift */,
-				06B4F5E02480AF0B0010445D /* PickLTests.swift */,
-				06B4F5DF2480AF0B0010445D /* SelectionTests.swift */,
-				0C88936505B44D4FD00CA6C7 /* Info.plist */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		99A8196FCCEA841861EFDE8C /* Sources */ = {
@@ -113,7 +112,7 @@
 		B9D23BE2F4FB53F8EE796678 = {
 			isa = PBXGroup;
 			children = (
-				EE4C714DC7D57EA7ABC3554E /* PickL */,
+				06BFC91A2484A4CF008C0AA2 /* PickLTests */,
 				99A8196FCCEA841861EFDE8C /* Sources */,
 				E4ABA0E41B45C0229BF57786 /* Products */,
 			);
@@ -128,23 +127,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE4C714DC7D57EA7ABC3554E /* PickL */ = {
-			isa = PBXGroup;
-			children = (
-				3A6E1AEB408264E3DDE61D2A /* .swiftlint.yml */,
-				90361A35CD1424A4CF69E141 /* Tests */,
-			);
-			name = PickL;
-			path = .;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		06BFC9182484A276008C0AA2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06BFC9192484A283008C0AA2 /* PickL.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9CF14CAC2C806E3B72047DD0 /* PickL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FCF4FB918339F3777A20C7D /* Build configuration list for PBXNativeTarget "PickL" */;
 			buildPhases = (
+				06BFC9182484A276008C0AA2 /* Headers */,
 				9AD79E084E232879F6BD9CF9 /* Sources */,
 				CB77475938D00408460F47BE /* Swiftlint */,
 			);
@@ -212,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				697E5C8A9909350CACCFB751 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +394,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = PickLTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,7 +466,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = PickLTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
