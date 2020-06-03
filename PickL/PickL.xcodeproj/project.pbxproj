@@ -29,6 +29,16 @@
 		06E450CD2484992F008E2A7C /* UIView+RowViewItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E450BE2484992E008E2A7C /* UIView+RowViewItemProtocol.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		06C40BE52487496400555628 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67179B4803C2815568A3ECB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CF14CAC2C806E3B72047DD0;
+			remoteInfo = PickL;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		06B4F5DD2480AF0B0010445D /* ItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsFactory.swift; path = PickLTests/ItemsFactory.swift; sourceTree = SOURCE_ROOT; };
 		06B4F5DE2480AF0B0010445D /* ComponentItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentItemTests.swift; path = PickLTests/ComponentItemTests.swift; sourceTree = SOURCE_ROOT; };
@@ -168,6 +178,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				06C40BE62487496400555628 /* PBXTargetDependency */,
 			);
 			name = PickLTests;
 			productName = PickLTests;
@@ -274,6 +285,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06C40BE62487496400555628 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CF14CAC2C806E3B72047DD0 /* PickL */;
+			targetProxy = 06C40BE52487496400555628 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1A66B8F7FBAF760E3E8EA0C0 /* Release */ = {
