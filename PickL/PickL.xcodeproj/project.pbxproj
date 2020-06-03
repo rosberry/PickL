@@ -112,8 +112,8 @@
 		B9D23BE2F4FB53F8EE796678 = {
 			isa = PBXGroup;
 			children = (
-				06BFC91A2484A4CF008C0AA2 /* PickLTests */,
 				99A8196FCCEA841861EFDE8C /* Sources */,
+				06BFC91A2484A4CF008C0AA2 /* PickLTests */,
 				E4ABA0E41B45C0229BF57786 /* Products */,
 			);
 			sourceTree = "<group>";
