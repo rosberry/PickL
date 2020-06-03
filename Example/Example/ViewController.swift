@@ -21,8 +21,8 @@ final class ViewController: UIViewController {
     }()
 
     private lazy var colors: [Color] = [.init(name: "Red", color: .red),
-                                .init(name: "Black", color: .black),
-                                .init(name: "Green", color: .green)]
+                                        .init(name: "Black", color: .black),
+                                        .init(name: "Green", color: .green)]
     private lazy var stuff: [String] = ["Car", "Ferry", "House"]
 
     // MARK: - Subviews
