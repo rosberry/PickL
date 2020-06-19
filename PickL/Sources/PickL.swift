@@ -116,7 +116,7 @@ extension PickL: PickLDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard (0..<selectedRows.count).contains(component) else {
+        guard selectedRows.indices.contains(component) else {
             return
         }
         selectedRows[component] = row
