@@ -1,0 +1,32 @@
+name: PickL
+options:
+  bundleIdPrefix: com.rosberry
+targets:
+  PickL:
+    type: framework
+    platform: iOS
+    deploymentTarget: "12.0"
+    sources: PickL/Sources
+    info:
+      path: PickL/Sources/Info.plist
+    settings:
+      base:
+        INFOPLIST_FILE: Sources/Info.plist
+    postCompileScripts:
+      - script: |
+          if command -v swiftlint >/dev/null; then
+            swiftlint
+          else
+            echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+          fi
+        name: Swiftlint
+  PickLTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "12.0"
+    sources: PickL
+    info:
+      path: PickL/Tests/Info.plist
+    settings:
+      base:
+        INFOPLIST_FILE: Tests/Info.plist

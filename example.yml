@@ -1,0 +1,28 @@
+name: Example
+options:
+  bundleIdPrefix: com.rosberry
+configs: 
+  Debug: debug
+configFiles:
+  Debug: Example/Configuration/SampleCode.xcconfig
+targets:
+  Example:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: Example
+    info:
+      path: Example/Example/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+        UIMainStoryboardFile: Main
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneStoryboardFile: Main
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+    settings:
+      base:
+        INFOPLIST_FILE: Example/Info.plist

@@ -1,15 +1,20 @@
-Pod::Spec.new do |s|
-  s.name         = "PickL"
-  s.version      = "1.0.0"
-  s.summary      = "Elegant manager for convenient deal with UIPickerView."
+Pod::Spec.new do |spec|
 
-  s.homepage           = "https://github.com/rosberry/PickL"
-  s.license        	   = { :type => "MIT", :file => "LICENSE" }
-  s.author             = { "Nikita Ermolenko" => "nikita.ermolenko@rosberry.com" }
-  s.social_media_url   = "https://twitter.com/iOtbivnoe"
+  spec.name         = "PickL"
+  spec.version      = "1.0"
+  spec.summary      = ""
 
-  s.platform     	= :ios, "9.0"
-  s.requires_arc   	= true
-  s.source       	= { :git => "https://github.com/rosberry/PickL.git", :tag => "#{s.version}" }
-  s.source_files    = "Sources/**/*.{h,swift}"
+  spec.homepage     = "https://github.com/rosberry/PickL"
+
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
+
+  spec.author       = { "Rosberry" => "develop@rosberry.com" }
+
+  spec.swift_version = "5.0"
+  spec.ios.deployment_target = "12.0"
+
+  spec.source       = { :git => "https://github.com/rosberry/PickL.git", :tag => "#{spec.version}" }
+
+  spec.source_files  = "PickL/Sources/*.{swift, h}"
+
 end
