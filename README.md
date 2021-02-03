@@ -146,6 +146,15 @@ Component items provides a plenty of selection approaches:
 
 ## Installation
 
+#### Depo
+You can use [Depo](https://github.com/rosberry/depo) to install `PickL` by adding it to your `Depofile`:
+
+```yaml
+carts:
+  - kind: github
+    identifier: rosberry/PickL
+```
+
 #### Carthage
 Create a `Cartfile` that lists the framework and run `carthage update`. Follow the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the framework to your project.
 
