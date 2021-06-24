@@ -11,6 +11,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "PickL", path: "PickL/Sources"),
-        .testTarget(name: "PickLTests", dependencies: ["PickL"], path: "PickL/Tests")
+        .testTarget(name: "PickLTests", dependencies: ["PickL"], path: "PickL/PickLTests")
     ]
 )
